@@ -1,5 +1,30 @@
+body
+{
+	width: 700px;
+	height: 600px;
+	border: 1px solid black;
+	display: flex;
+	position: relative;
+}
+
 h1
 {
-	color: red;
-	font-style: 'Fira Code';
+	color: #EC9A9A;
+}
+
+.control
+{
+	flex: 1;
+	.color-picker
+	{
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+}
+
+#draw
+{
+	cursor: pointer;
+	border-left: 1px solid black
 }
