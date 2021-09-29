@@ -4,11 +4,22 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="icon" href="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.6435-9/121107552_978084246037100_2302379323063758212_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=PORe0IJfZXEAX-mGa8P&_nc_ht=scontent.fsgn5-6.fna&oh=6036a1ac98e08a29b5801a81fb456b66&oe=6168B415"/>
-		<title>New HTML</title>
-		<link rel="stylesheet" href="1.css"/>
+		<link rel="stylesheet" href="./1.css"/>
+		<title>App Drawer</title>
 	</head>
 
 	<body>
-		<h1>Welcome</h1>
+		<div class="control">
+			<div class="color-picker" style="background: red"></div>
+			<div class="color-picker" style="background: yellow"></div>
+			<div class="color-picker" style="background: orange"></div>
+			<div class="color-picker" style="background: green"></div>
+			<div class="color-picker" style="background: blue"></div>
+			<div class="color-picker" style="background: black"></div>
+		</div>
+		<canvas id="draw" width="600px" height="600px"></canvas>
+		<button id="btn-clear">Clear</button>
 	</body>
+
+	<script src="./1.js"></script>
 </html>

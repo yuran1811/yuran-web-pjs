@@ -7,24 +7,25 @@ body
 	position: relative;
 }
 
-h1
+.control {flex: 1;}
+
+.color-picker
 {
-	color: #EC9A9A;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
 }
 
-.control
+#btn-clear
 {
-	flex: 1;
-	.color-picker
-	{
-		width: 100px;
-		height: 100px;
-		cursor: pointer;
-	}
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 0.5rem;
 }
 
 #draw
 {
 	cursor: pointer;
-	border-left: 1px solid black
+	border-left: 1px solid black;
 }
