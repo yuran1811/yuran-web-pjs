@@ -1,12 +1,20 @@
 const canvas = document.querySelector('#draw')
 const ctx = canvas.getContext('2d')
+let ChangeBtn = document.querySelector('#btn-pointsize');
 
 ctx.fillStyle = 'black'
+
+var PointSize = 12;
+
+ChangeBtn.addEventListener('click', (e) =>
+{
+	PointSize = document.querySelector('#point-size').value;
+})
 
 function draw(x, y)
 {
 	const circle = new Path2D();
-	circle.arc(x, y, 10, 0, 2 * Math.PI);
+	circle.arc(x, y, PointSize, 0, 2 * Math.PI);
 	ctx.fill(circle)
 }
 
@@ -31,7 +39,6 @@ canvas.addEventListener('mousemove', (e) =>
 const colorPickers = [...document.querySelectorAll('.color-picker')]
 colorPickers.forEach(colorPicker =>
 {
-	console.log('pick')
 	colorPicker.addEventListener('click', (e) =>
 	{
 		ctx.fillStyle = e.target.style.backgroundColor
