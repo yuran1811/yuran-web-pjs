@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="icon" href="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.6435-9/121107552_978084246037100_2302379323063758212_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=PORe0IJfZXEAX-mGa8P&_nc_ht=scontent.fsgn5-6.fna&oh=6036a1ac98e08a29b5801a81fb456b66&oe=6168B415"/>
-		<link rel="stylesheet" href="./1.css"/>
-		<title>App Drawer</title>
-	</head>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-	<body>
-		<div class="control">
-			<div class="color-picker" style="background: red"></div>
-			<div class="color-picker" style="background: yellow"></div>
-			<div class="color-picker" style="background: orange"></div>
-			<div class="color-picker" style="background: green"></div>
-			<div class="color-picker" style="background: blue"></div>
-			<div class="color-picker" style="background: black"></div>
-			<div class="color-picker" style="background: white"></div>
-			<div class="color-picker" style="background: pink"></div>
-			<div class="color-picker" style="background: #2FF8E7"></div>
-		</div>
+	<link rel="icon" href="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.6435-9/121107552_978084246037100_2302379323063758212_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=PORe0IJfZXEAX-mGa8P&_nc_ht=scontent.fsgn5-6.fna&oh=6036a1ac98e08a29b5801a81fb456b66&oe=6168B415"/>
+	<link rel="stylesheet" href="./1.css"/>
 
-		<canvas id="draw" width="600px" height="600px"></canvas>
-		<button id="btn-clear">Reset</button>
+	<title>App Drawer</title>
+</head>
 
-		<input id="point-size" type="number" placeholder="Change the size">
-		<button id="btn-pointsize">Change</button>
+<body>
+	<div class="control">
+		<div class="color-picker" style="background: red"></div>
+		<div class="color-picker" style="background: yellow"></div>
+		<div class="color-picker" style="background: orange"></div>
+		<div class="color-picker" style="background: green"></div>
+		<div class="color-picker" style="background: blue"></div>
+		<div class="color-picker" style="background: black"></div>
+		<div class="color-picker" style="background: white"></div>
+		<div class="color-picker" style="background: pink"></div>
+		<div class="color-picker" style="background: #2FF8E7"></div>
+	</div>
 
-		<a id="link-github" href="https://github.com/yuran1811"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="50" height="50"></a>
-	</body>
+	<canvas id="draw" width="800px" height="600px"></canvas>
+	<button id="btn-clear">Reset</button>
 
-	<script src="./1.js"></script>
+	<input id="point-size" type="number" placeholder="Change the size">
+	<button id="btn-pointsize">Change</button>
+
+	<a id="link-github" href="https://github.com/yuran1811"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="50" height="50"></a>
+
+	<!--<form>
+		<input type="text" id="link-mail">
+		<button type="submit" id="btn-linkmail">Send</button>
+	</form> -->
+	<button id="switch-mode">Switch Mode</button>
+</body>
+
+<script src="./1.js"></script>
 </html>

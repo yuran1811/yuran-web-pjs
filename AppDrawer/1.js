@@ -46,4 +46,11 @@ colorPickers.forEach(colorPicker =>
 })
 
 const ButtonClear = document.querySelector('#btn-clear');
-ButtonClear.addEventListener('click', (e) => {ctx.clearRect(0, 0, 600, 600)})
+ButtonClear.addEventListener('click', (e) => {ctx.clearRect(0, 0, 800, 600)})
+
+const Mode = document.querySelector('#switch-mode');
+Mode.addEventListener('click', (e) =>
+{
+	let Ele = document.body;
+	Ele.classList.toggle("dark")
+})

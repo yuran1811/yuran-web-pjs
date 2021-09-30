@@ -1,13 +1,13 @@
 body
 {
-	width: 700px;
+	width: 900px;
 	height: 600px;
 	border: 1px solid black;
 	display: flex;
 	position: relative;
 }
 
-.control {flex: 0;}
+.control {flex: 1;}
 
 .color-picker
 {
@@ -25,31 +25,65 @@ body
 #btn-clear
 {
 	position: absolute;
-	bottom: 0px;
-	right: 0px;
-	padding: 0.5rem;
+	cursor: pointer;
+	top: 33px;
+	right: -60px;
+	width: 60px;
+	height: 35px;
 }
 
 #point-size
 {
 	position: absolute;
-	right: 80px;
-	top: 0px;
-	padding: 0.5rem;
+	right: 58px;
+	top: -1px;
+	width: 120px;
+	height: 29px;
 }
 
 #btn-pointsize
 {
 	position: absolute;
-	width: 80px;
+	width: 60px;
 	height: 35px;
-	right: 0px;
-	top: 0px;
+	right: -1px;
+	top: -1px;
 }
 
 #link-github
 {
 	position: absolute;
-	left: 0px;
-	top: 550px;
+	right: -60px;
+	top: 100px;
+}
+
+/*#link-mail
+{
+	position: relative;
+	top: 50px;
+	right: 0px;
+}
+
+#btn-linkmail
+{
+	position: relative;
+	top: 50px;
+	right: 10px;
+}*/
+
+#switch-mode
+{
+	cursor: pointer;
+	position: absolute;
+	height: 35px;
+	width: 60px;
+	text-align: center;
+	top: -1px;
+	right: -60px;
+}
+
+.dark
+{
+	background-color: #222;
+    color: #e6e6e6;
 }
