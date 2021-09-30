@@ -88,3 +88,10 @@ body
 	background-color: #222;
     color: #e6e6e6;
 }
+
+h1
+{
+	position: absolute;
+	right: -500px;
+	top: 100px;
+}
