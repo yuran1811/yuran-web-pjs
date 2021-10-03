@@ -1,15 +1,14 @@
-const canvas = document.querySelector('#draw');
+ canvas = document.querySelector('#draw');
 
 let penPoint_status = false;
+let penLine_status = false;
+
 const penPoint = canvas.getContext('2d');
 penPoint.fillStyle = 'black';
 
-let penLine_status = false;
-const penLine = canvas.getContext('2d');
-penLine.fillStyle = 'black';
 
 // Chane Size
-var PointSize = 12;
+var PointSize = 10;
 let ChangeBtn = document.querySelector('#btn-pointsize');
 ChangeBtn.addEventListener('click', (e) =>
 {
@@ -70,21 +69,29 @@ Mode.addEventListener('click', (e) =>
 // Draw Line
 let LineDraw = document.querySelector('#draw-line');
 
-function Line_drawLine(e)
-{
-	if (!penLine_status) return;
-	const react = canvas.getBoundingClientRect();
-	penLine.lineTo(e.clientX - react.left, e.clientY - react.top);
-	penLine.stroke();
-}
-
 LineDraw.addEventListener('click', (e) =>
 {
 	penLine_status = true;
 	penPoint_status = false;
-	penLine.moveTo(e.clientX, e.clientY);
-	canvas.addEventListener('click', (e) => Line_drawLine(e));
-	// penLine_status = false;
+	if (!penLine_status) return;
+
+	var mouseX = -1;
+	var mouseY = -1;
+	canvas.addEventListener('click', (e) =>
+	{
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+	})
+	canvas.addEventListener('click', (e) =>
+	{
+		const penLine = canvas.getContext('2d');
+		const react = canvas.getBoundingClientRect();
+		// penLine.moveTo(e.clientX, e.clientY);
+		// penLine.lineTo(mouseX - react.left, mouseY - react.top);
+		penLine.moveTo(mouseX, mouseY);
+		penLine.lineTo(e.clientX - react.left, e.clientY - react.top);
+		penLine.stroke();
+	})
 })
 
 
