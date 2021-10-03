@@ -1,7 +1,7 @@
 const canvas = document.querySelector('#draw')
-const ctx = canvas.getContext('2d')
 let ChangeBtn = document.querySelector('#btn-pointsize');
 
+const ctx = canvas.getContext('2d')
 ctx.fillStyle = 'black'
 
 var PointSize = 12;
@@ -53,4 +53,43 @@ Mode.addEventListener('click', (e) =>
 {
 	let Ele = document.body;
 	Ele.classList.toggle("dark")
+})
+
+
+const Theme = document.querySelector('#theme');
+
+(function() {
+    window.__onThemeChange = function() {};
+    function setTheme(newTheme) {
+        window.__theme = newTheme;
+        preferredTheme = newTheme;
+        document.body.setAttribute('data-theme', newTheme);
+        window.__onThemeChange(newTheme);
+    }
+
+    var preferredTheme;
+    try {
+        preferredTheme = localStorage.getItem('theme');
+    } catch (err) { }
+
+    window.__setPreferredTheme = function(newTheme) {
+        setTheme(newTheme);
+        try {
+            localStorage.setItem('theme', newTheme);
+        } catch (err) {}
+    }
+
+    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    darkQuery.addListener(function(e) {
+        window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+    });
+
+    setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+})();
+
+Theme.addEventListener('click', (e) => 
+{
+  window.__setPreferredTheme(mode);
+  if (window.__theme == 'dark')
+  	console.log('dark mode is on');
 })
