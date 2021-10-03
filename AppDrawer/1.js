@@ -1,95 +1,98 @@
-const canvas = document.querySelector('#draw')
-let ChangeBtn = document.querySelector('#btn-pointsize');
+const canvas = document.querySelector('#draw');
 
-const ctx = canvas.getContext('2d')
-ctx.fillStyle = 'black'
+let penPoint_status = false;
+const penPoint = canvas.getContext('2d');
+penPoint.fillStyle = 'black';
 
+let penLine_status = false;
+const penLine = canvas.getContext('2d');
+penLine.fillStyle = 'black';
+
+// Chane Size
 var PointSize = 12;
-
+let ChangeBtn = document.querySelector('#btn-pointsize');
 ChangeBtn.addEventListener('click', (e) =>
 {
 	PointSize = document.querySelector('#point-size').value;
 })
 
-function draw(x, y)
+
+// Pen
+function Pen_drawPoint(x, y)
 {
+	if (!penPoint_status) return;
 	const circle = new Path2D();
 	circle.arc(x, y, PointSize, 0, 2 * Math.PI);
-	ctx.fill(circle)
+	penPoint.fill(circle);
 }
 
-let isDown = false;
+function Pen_drawFree(e, isDown)
+{	
+	if (!isDown) return;
+	const {clientX, clientY} = e;
+	const react = canvas.getBoundingClientRect();
+	Pen_drawPoint(clientX - react.left, clientY - react.top);
+}
 
-canvas.addEventListener('mouseup', (e) => {isDown = false;})
-canvas.addEventListener('mousedown', (e) =>
+let PenDraw = document.querySelector('#pen');
+PenDraw.addEventListener('click', (e) =>
 {
-	isDown = true;
-	const {clientX, clientY} = e
-	const react = canvas.getBoundingClientRect()
-	draw(clientX - react.left, clientY - react.top)
-})
-canvas.addEventListener('mousemove', (e) =>
-{
-	if (!isDown) return
-	const {clientX, clientY} = e
-	const react = canvas.getBoundingClientRect()
-	draw(clientX - react.left, clientY - react.top)
+	let isDown = false;
+	penPoint_status = true;
+	penLine_status = false;
+	canvas.addEventListener('mouseup', (e) => {isDown = false;})
+	canvas.addEventListener('mousedown', (e) => {isDown = 1; Pen_drawFree(e, isDown);});
+	canvas.addEventListener('mousemove', (e) => {Pen_drawFree(e, isDown)});
+	// penPoint_status = false;
 })
 
+
+// Color Pickers
 const colorPickers = [...document.querySelectorAll('.color-picker')]
-colorPickers.forEach(colorPicker =>
+colorPickers.forEach(Picker =>
 {
-	colorPicker.addEventListener('click', (e) =>
+	Picker.addEventListener('click', (e) =>
 	{
-		ctx.fillStyle = e.target.style.backgroundColor
+		penPoint.fillStyle = e.target.style.backgroundColor;
 	})
 })
 
-const ButtonClear = document.querySelector('#btn-clear');
-ButtonClear.addEventListener('click', (e) => {ctx.clearRect(0, 0, 800, 600)})
 
+// Theme
 const Mode = document.querySelector('#switch-mode');
 Mode.addEventListener('click', (e) =>
 {
 	let Ele = document.body;
-	Ele.classList.toggle("dark")
+	Ele.classList.toggle("dark");
 })
 
 
-const Theme = document.querySelector('#theme');
+// Draw Line
+let LineDraw = document.querySelector('#draw-line');
 
-(function() {
-    window.__onThemeChange = function() {};
-    function setTheme(newTheme) {
-        window.__theme = newTheme;
-        preferredTheme = newTheme;
-        document.body.setAttribute('data-theme', newTheme);
-        window.__onThemeChange(newTheme);
-    }
-
-    var preferredTheme;
-    try {
-        preferredTheme = localStorage.getItem('theme');
-    } catch (err) { }
-
-    window.__setPreferredTheme = function(newTheme) {
-        setTheme(newTheme);
-        try {
-            localStorage.setItem('theme', newTheme);
-        } catch (err) {}
-    }
-
-    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    darkQuery.addListener(function(e) {
-        window.__setPreferredTheme(e.matches ? 'dark' : 'light')
-    });
-
-    setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-})();
-
-Theme.addEventListener('click', (e) => 
+function Line_drawLine(e)
 {
-  window.__setPreferredTheme(mode);
-  if (window.__theme == 'dark')
-  	console.log('dark mode is on');
+	if (!penLine_status) return;
+	const react = canvas.getBoundingClientRect();
+	penLine.lineTo(e.clientX - react.left, e.clientY - react.top);
+	penLine.stroke();
+}
+
+LineDraw.addEventListener('click', (e) =>
+{
+	penLine_status = true;
+	penPoint_status = false;
+	penLine.moveTo(e.clientX, e.clientY);
+	canvas.addEventListener('click', (e) => Line_drawLine(e));
+	// penLine_status = false;
 })
+
+
+// Clear
+const ButtonClear = document.querySelector('#btn-clear');
+ButtonClear.addEventListener('click', (e) =>
+{
+	penPoint.clearRect(0, 0, 800, 600);
+	penLine.clearRect(0, 0, 800, 600);
+	penLine_status = penPoint_status = 0;
+});
