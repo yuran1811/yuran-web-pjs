@@ -73,7 +73,6 @@ LineDraw.addEventListener('click', (e) =>
 {
 	penLine_status = true;
 	penPoint_status = false;
-	if (!penLine_status) return;
 
 	var mouseX = -1;
 	var mouseY = -1;
@@ -84,6 +83,7 @@ LineDraw.addEventListener('click', (e) =>
 	})
 	canvas.addEventListener('click', (e) =>
 	{
+		if (!penLine_status) return;
 		const penLine = canvas.getContext('2d');
 		const react = canvas.getBoundingClientRect();
 		// penLine.moveTo(e.clientX, e.clientY);
@@ -100,6 +100,5 @@ const ButtonClear = document.querySelector('#btn-clear');
 ButtonClear.addEventListener('click', (e) =>
 {
 	penPoint.clearRect(0, 0, 800, 600);
-	penLine.clearRect(0, 0, 800, 600);
 	penLine_status = penPoint_status = 0;
-});
+})
