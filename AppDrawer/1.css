@@ -1,3 +1,9 @@
+:root
+{
+	--heading-hover-text: -webkit-linear-gradient(#2A6748, #18734B);
+	--heading-hover: linear-gradient(35deg, #A3CBEB, #C7E9A8);
+}
+
 body
 {
 	width: 800px;
@@ -95,15 +101,49 @@ body
 
 .dark
 {
+	--heading-hover: linear-gradient(35deg, #497397, #9381A2, #DD88A0);
+	--heading-hover-text: -webkit-linear-gradient(#EAE5C9, #6CC6CB);
 	background-color: #222;
     color: #e6e6e6;
 }
 
 h1
 {
+	background: var(--heading-hover-text);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-family: 'Trebuchet MS', sans-serif;
+	align-items: center;
 	position: absolute;
-	right: -375px;
+	right: -455px;
 	top: 100px;
+	padding: 0.5rem;
+	width: 250px;
+	height: 50px;
+}
+
+h1::before
+{  
+	transform: scaleX(0);
+	transform-origin: bottom right;
+}
+
+h1:hover::before
+{
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+h1::before
+{
+	content: " ";
+	z-index: -1;
+	display: block;
+	position: absolute;
+	inset: 0 0 0 0;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: var(--heading-hover);
+	transition: transform 0.3s ease;
 }
 
 #theme
