@@ -254,13 +254,13 @@ h1
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	font-family: 'Trebuchet MS', sans-serif;
+	align-items: center;
 	position: relative;
 	margin-top: 15px;
 	padding: 0.5rem;
 	width: 250px;
 	height: 50px;
 	top: 5px;
-	align-items: center;
 }
 
 h1::before
@@ -285,6 +285,31 @@ h1::before
 	top: 0; left: 0; right: 0; bottom: 0;
 	background: var(--heading-hover);
 	transition: transform 0.3s ease;
+}
+
+#nav-bar
+{
+	position: absolute;
+	background: white;
+	border-radius: 5px;
+	width: 36px;
+	height: 36px;
+	left: 22px;
+	top: 22px;
+	z-index: -1;
+}
+#nav-bar:hover
+{
+	
+}
+
+.nav-bar
+{
+	position: absolute;
+	max-height: 50px;
+	max-width: 50px;
+	left: 15px;
+	top: 15px;
 }
 
 @media screen and (max-width: 480px)
