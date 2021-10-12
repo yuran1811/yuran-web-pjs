@@ -46,17 +46,6 @@ PenDraw.addEventListener('click', (e) =>
 })
 
 
-// Color Pickers
-const colorPickers = [...document.querySelectorAll('.color-picker')]
-colorPickers.forEach(Picker =>
-{
-	Picker.addEventListener('click', (e) =>
-	{
-		penPoint.fillStyle = e.target.style.backgroundColor;
-	})
-})
-
-
 // Theme
 const Mode = document.querySelector('#switch-mode');
 Mode.addEventListener('click', (e) =>
@@ -92,6 +81,15 @@ LineDraw.addEventListener('click', (e) =>
 		penLine.lineTo(e.clientX - react.left, e.clientY - react.top);
 		penLine.stroke();
 	})
+})
+
+
+// Color Change
+let colorGet = document.querySelector('#color-get');
+colorGet.addEventListener('click', (e) =>
+{
+	const colorPen = document.querySelector('#color-change').value;
+	penPoint.fillStyle = colorPen;
 })
 
 
