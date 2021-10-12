@@ -1,4 +1,4 @@
- canvas = document.querySelector('#draw');
+const canvas = document.querySelector('#draw');
 
 let penPoint_status = false;
 let penLine_status = false;
