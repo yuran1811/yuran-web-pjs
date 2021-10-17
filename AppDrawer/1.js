@@ -97,6 +97,6 @@ colorGet.addEventListener('click', (e) =>
 const ButtonClear = document.querySelector('#btn-clear');
 ButtonClear.addEventListener('click', (e) =>
 {
-	penPoint.clearRect(0, 0, 800, 600);
+	penPoint.clearRect(0, 0, 1100, 600);
 	penLine_status = penPoint_status = 0;
 })
