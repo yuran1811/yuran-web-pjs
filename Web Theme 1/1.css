@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-* {box-sizing: border-box;}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
 
 :root
 {
@@ -18,11 +23,13 @@
 
 body
 {
+	font-family: 'Recursive', sans-serif;
 	background: var(--background-color);
 	transition: background 0.2s linear;
 	justify-content: center;
+	overflow: hidden;
 	display: flex;
-	height: 100vh;
+	height: 100%;
 	margin: 0;
 }
 
@@ -36,6 +43,115 @@ body.dark
 	--close-btn: white;
 	--color: #FAFAFA;
 }
+
+.navbar-container
+{
+	transform-style: preserve-3d;
+	position: absolute;
+	overflow: hidden;
+	background: none;
+	height: 500px;
+	width: 200px;
+	left: 0px;
+	top: 0px;
+}
+.navbar-container.active .bar
+{
+	transform: rotate(360deg);
+	background-color: transparent;
+}
+
+.navbar-container.active .bar::before
+{
+	/*transform: translateY(0) rotate(45deg);*/
+	transform: translateX(-50px);
+}
+.navbar-container.active .bar::after
+{
+	transform: translateY(0) rotate(-45deg);
+}
+
+.menu
+{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+}
+
+.hamburger-menu
+{
+	align-items: left;
+	cursor: pointer;
+	position: fixed;
+	height: 50px;
+	width: 50px;
+}
+
+#bar {color: var(--close-btn);}
+
+.links
+{
+	align-items: center;
+	position: relative;
+	margin-left: 10px;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	left: 15px;
+	top: 0px;
+	z-index: 2;
+}
+
+ul {list-style: none;}
+ul li.active a {color: #e20f2f;}
+
+.links a
+{
+	left: 5px;
+	text-decoration: none;
+	color: var(--color);
+	padding: 0.7rem 0;
+	display: inline-block;
+	font-size: 22px;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: 0.3s;
+	opacity: 0;
+	transform: translateY(10px);
+	animation: hide 0.5s forwards ease;
+}
+.links a:hover {color: #e20f2f;}
+
+.navbar-container.active .links a {animation: appear 0.5s forwards ease var(--i);}
+
+@keyframes appear
+{
+	from {opacity: 0; transform: translateY(10px);}
+	to {opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes hide
+{
+	from {opacity: 1; transform: translateY(0px);}
+	to {opacity: 0; transform: translateY(10px);}
+}
+
+/*end navbar*/
+
+
+#about-me
+{
+	height: 200px;
+	width: auto;
+	align-items: center;
+}
+/*end In4*/
 
 .checkbox
 {
@@ -129,11 +245,14 @@ body.dark
 .social-panel button.close-btn
 {
 	border: 1px solid var(--close-btn);
+	background-color: var(--close-btn);
 	border-radius: 50px;
 	position: absolute;
 	cursor: pointer;
 	right: 15px;
 	top: 10px;
+	width: 20px;
+	height: 5px;
 }
 
 .social-panel p
