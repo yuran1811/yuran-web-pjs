@@ -2,5 +2,5 @@
  
 ## My HTML - Projects are here!!!
 
-+ [x] [**App Drawer**](tree/main/AppDrawer)
-+ [x] [**Web Theme 1**](tree/main/Web%20Theme%201)
++ [x] [**App Drawer**](AppDrawer)
++ [x] [**Web Theme 1**](Web%20Theme%201)
