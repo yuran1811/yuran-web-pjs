@@ -6,6 +6,7 @@ menuToggle.addEventListener("click", () => {
 	navbarContainer.classList.toggle("active");
 	mainContainer.classList.toggle("active");
 	labelToggle.classList.toggle("active");
+	menuToggle.classList.toggle("active");
 })
 
 const SocialPanel_container = document.querySelector('.social-panel-container');
