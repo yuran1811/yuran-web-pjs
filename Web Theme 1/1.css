@@ -18,17 +18,20 @@
 
 * {padding: 0; margin: 0; box-sizing: border-box;}
 
+::-webkit-scrollbar {width: 0px; background: transparent;}
+
+
 /*body*/
 body
 {
-	font-family: 'Recursive', sans-serif;
-	background: var(--background-color);
-	transition: background 0.2s linear;
-	justify-content: center;
-	overflow: hidden;
 	/*display: flex;*/
+	background: var(--background-color);
+	font-family: 'Recursive', sans-serif;
 	height: 100%;
+	justify-content: center;
 	margin: 0;
+	overflow: hidden;
+	transition: background 0.2s linear;
 }
 
 body.dark
@@ -44,11 +47,8 @@ body.dark
 	--social-panel-hover: #FF852E;
 }
 
-::-webkit-scrollbar {width: 0px; background: transparent;}
-
 
 /*main*/
-
 .main
 {
 	background: var(--background-color);
@@ -59,8 +59,6 @@ body.dark
 	transition: width 0.5s, left 0.5s;
 	width: calc(100% - 0px);
 }
-
-.main.active {left: 230px; width: calc(100% - 230px);}
 
 .main .top-bar
 {
@@ -78,44 +76,83 @@ body.dark
 	z-index: 10000;
 }
 
+.main.active {left: 230px; width: calc(100% - 230px);}
+
+
+/*Nav bar*/
 .navbar-container
 {
-	transform-style: preserve-3d;
-	position: fixed;
-	top: 20px;
-	left: 0px;
-	overflow: hidden;
 	background: none;
 	height: 100%;
+	left: 0px;
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	transform-style: preserve-3d;
 	width: 0px;
+	border-right: 1.25px solid var(--border-color);
 }
 
 .navbar-container.active {width: 230px;}
 
-.menu {cursor: pointer; position: absolute;}
+.menu {
+	cursor: pointer;
+	position: fixed;
+	padding: 2%;
+	left: 5px;
+	width: 32px;
+	height: 32px;
+	padding: auto;
+	align-items: left;
+	display: block;
+}
 
-#bar
+.bar {
+	width: 30px;
+	height: 1.5px;
+	border-radius: 2.5px;
+	background-color: var(--color);
+	transition: 0.5s;
+	position: relative;
+}
+
+.bar::before, .bar::after {
+	content: "";
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	background-color: var(--color);
+	transition: 0.5s;
+}
+
+.bar::before {transform: translateY(-9px);}
+.bar::after {transform: translateY(9px);}
+
+.menu.active .bar::before {transform: translateY(0) rotate(45deg);}
+.menu.active .bar {transform: rotate(360deg); background-color: transparent;}
+.menu.active .bar::after {transform: translateY(0) rotate(-45deg);}
+
+/*#bar
 {
 	align-items: center;
 	color: var(--close-btn);
 	margin: auto;
 }
+*/
 
 .links
 {
 	align-items: center;
-	position: relative;
-	margin-left: 10px;
-	overflow: hidden;
 	height: 100%;
-	width: 100%;
 	left: 15px;
-	top: 0px;
+	margin-left: 10px;
+	margin-top: 15px;
+	overflow: hidden;
+	position: relative;
+	top: 50px;
+	width: 100%;
 	z-index: 2;
 }
-
-ul {list-style: none;}
-ul li.active a {color: var(--heading-title);}
 
 .links a
 {
@@ -135,6 +172,9 @@ ul li.active a {color: var(--heading-title);}
 }
 .links a:hover {color: var(--heading-title);}
 
+ul {list-style: none;}
+ul li.active a {color: var(--heading-title);}
+
 .navbar-container.active .links a {animation: appear 0.2s forwards ease var(--i);}
 
 @keyframes appear
@@ -149,77 +189,77 @@ ul li.active a {color: var(--heading-title);}
 	to {opacity: 0; transform: translateY(10px);}
 }
 
-/*end navbar*/
 
+/*Content*/
 section
 {
-	position: relative;
 	color: var(--color);
 	padding: 5%;
+	position: relative;
 }
 
 #banner {padding: 7%;}
 
 .heading-title {
 	color: var(--heading-title);
-	text-transform: uppercase;
 	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 .banner {
+	align-items: center;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
 .banner .content {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
 }
 
 .banner .imgBox {
+	border-radius: 50%;
+	height: 300px;
+	margin-bottom: 20px;
+	overflow: hidden;
 	position: relative;
 	width: 300px;
-	height: 300px;
-	overflow: hidden;
-	border-radius: 50%;
-	margin-bottom: 20px;
 }
 
 .banner .imgBox img {
-	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	width: 100%;
 }
 
 .socialMedia {
+	display: flex;
 	position: relative;
 	top: 20px;
-	display: flex;
 }
 
 .socialMedia li {list-style: none;}
 
 .socialMedia li a {
-	width: 55px;
-	height: 55px;
-	background: rgba(0,0,0,0.05);
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	text-decoration: none;
+	background: rgba(0,0,0,0.05);
 	color: var(--black);
+	display: flex;
 	font-size: 1.2em;
+	height: 55px;
+	justify-content: center;
 	margin: 5px;
+	text-decoration: none;
+	width: 55px;
 }
 
 .socialMedia li a:hover {background: #3084C6; color: #fff;}
 .dark .socialMedia li a:hover {background: #2196f3;}
 
-/*end In4*/
 
+/*Theme Switch*/
 .theme-toggle {position: relative;}
 
 .label
@@ -229,27 +269,27 @@ section
 	border-radius: 50px;
 	cursor: pointer;
 	display: flex;
-	justify-content: space-between;
 	height: 26px;
+	justify-content: space-between;
 	padding: 5px;
 	position: fixed;
-	transform: scale(1.5);
-	width: 50px;
 	right: 25px;
 	top: 15px;
+	transform: scale(1.5);
+	width: 50px;
 }
 
 .label .ball
 {
 	background-color: #fff;
-	transition: transform 0.15s linear;
-	transform: translateX(0px);
 	border-radius: 50%;
-	position: absolute;
 	height: 22px;
-	width: 22px;
 	left: 2px;
+	position: absolute;
 	top: 2px;
+	transform: translateX(0px);
+	transition: transform 0.15s linear;
+	width: 22px;
 }
 
 .checkbox
@@ -391,20 +431,20 @@ section
 /*Float Button*/
 .floating-btn
 {
-	box-shadow: 0 16px 22px -17px #03153B;
-	border: 3px solid var(--floar-btn-hover);
-	border-radius: 26.5px;
 	background-color: #3CCD76;
-	padding: 12px 20px;
-	line-height: 20px;
-	font-weight: bold;
-	font-size: 16px;
-	cursor: pointer;
-	position: fixed;
-	z-index: 999;
+	border-radius: 26.5px;
+	border: 3px solid var(--floar-btn-hover);
 	bottom: 20px;
-	right: 20px;
+	box-shadow: 0 16px 22px -17px #03153B;
 	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+	padding: 12px 20px;
+	position: fixed;
+	right: 20px;
+	z-index: 999;
 }
 
 .floating-btn:hover
@@ -419,14 +459,14 @@ section
 {
 	background-image: var(--float-btn-hover);
 	border-radius: 10px 10px 0 0;
+	bottom: 0;
 	color: white;
 	font-family: 'Muli';
+	left: 50%;
 	padding: 7px 15px;
 	position: fixed;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
 	text-align: center;
+	transform: translateX(-50%);
 	z-index: 998;
 }
 
@@ -436,6 +476,8 @@ section
 	text-decoration: none;
 }
 
+
+/*Title*/
 .title
 {
 	background: var(--heading-hover-text);
