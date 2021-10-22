@@ -16,6 +16,7 @@ const CloseBtn = document.querySelector('.close-btn');
 ToggleBtn.addEventListener('change', (e) => {document.body.classList.toggle('dark');});
 
 FloatingBtn.addEventListener('mouseover', (e) => {SocialPanel_container.classList.toggle('visible');});
+FloatingBtn.addEventListener('mouseout', (e) => {SocialPanel_container.classList.remove('visible');});
 SocialPanel_container.addEventListener('mouseover', (e) => {SocialPanel_container.classList.toggle('visible');});
 SocialPanel_container.addEventListener('mouseout', (e) => {SocialPanel_container.classList.remove('visible')});
 
