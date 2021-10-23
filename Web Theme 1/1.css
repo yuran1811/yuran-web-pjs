@@ -76,7 +76,46 @@ body.dark
 	z-index: 10000;
 }
 
+.title
+{
+	background: var(--heading-hover-text);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	align-items: center;
+	font-family: 'Trebuchet MS', sans-serif;
+	height: 50px;
+	left: 40%;
+	padding: 0.5rem;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	width: 20%;
+	transition: width 0.5s, left 0.5s;
+}
+
+.title:hover::before
+{
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+.title::before
+{
+	background: var(--heading-hover);
+	content: " ";
+	display: block;
+	inset: 0 0 0 0;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	transform-origin: bottom right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+	z-index: -1;
+}
+
 .main.active {left: 230px; width: calc(100% - 230px);}
+.main.active .title{left: calc(40% - 120px);}
 
 
 /*Nav bar*/
@@ -93,6 +132,7 @@ body.dark
 	border-right: 1.25px solid var(--border-color);
 }
 
+.navbar-container.active {width: 230px;}
 .navbar-container.active {width: 230px;}
 
 .menu {
@@ -474,45 +514,6 @@ section
 {
 	color: #FF7500;
 	text-decoration: none;
-}
-
-
-/*Title*/
-.title
-{
-	background: var(--heading-hover-text);
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	align-items: center;
-	font-family: 'Trebuchet MS', sans-serif;
-	height: 50px;
-	margin: auto;
-	padding: 0.5rem;
-	position: relative;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	width: auto;
-}
-
-.title:hover::before
-{
-	transform: scaleX(1);
-	transform-origin: bottom left;
-}
-
-.title::before
-{
-	background: var(--heading-hover);
-	content: " ";
-	display: block;
-	inset: 0 0 0 0;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	transform-origin: bottom right;
-	transform: scaleX(0);
-	transition: transform 0.3s ease;
-	z-index: -1;
 }
 
 @media screen and (max-width: 480px)
