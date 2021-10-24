@@ -10,3 +10,4 @@
 
 ### Others
 + [x] [**project: dinitz**](https://github.com/yuran1811/project-dinitz)
++ [x] [**Detect Cheating**](https://github.com/yuran1811/detect-cheating-online-tests)
