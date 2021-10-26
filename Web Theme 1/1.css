@@ -10,10 +10,13 @@
 	--close-btn: black;
 	--color: #1E2025;
 	--float-btn-hover: linear-gradient(to right, #EAE5C9, #6CC6CB);
+	--float-btn-hover2: linear-gradient(to left, #C9C4AA, #6CC6CB);
 	--heading-hover-text: -webkit-linear-gradient(#2A6748, #18734B);
 	--heading-hover: linear-gradient(35deg, #A3CBEB, #C7E9A8);
 	--heading-title: #e20f2f;
 	--social-panel-hover: #FF6A00;
+	--social-panel-p-color: #A7EDFF;
+	--social-panel-p-background: #046585;
 }
 
 * {padding: 0; margin: 0; box-sizing: border-box;}
@@ -45,6 +48,8 @@ body.dark
 	--heading-hover: linear-gradient(35deg, #497397, #9381A2, #DD88A0);
 	--heading-title: #FF5D76;
 	--social-panel-hover: #FF852E;
+	--social-panel-p-color: #046585;
+	--social-panel-p-background: #A7EDFF;
 }
 
 
@@ -375,7 +380,7 @@ section
 	box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
 	
 	border-radius: 16px;
-	border: 5px solid #3CCD76;
+	border: 5px solid var(--social-panel-p-background);
 
 	display: flex;
 	flex-direction: column;
@@ -406,9 +411,9 @@ section
 
 .social-panel p
 {
-	background-color: #3CCD76;
+	background-color: var(--social-panel-p-background);
 	border-radius: 0 0 10px 10px;
-	color: #1D5232;
+	color: var(--social-panel-p-color);
 	font-size: 14px;
 	line-height: 18px;
 	padding: 2px 17px 6px;
@@ -423,7 +428,7 @@ section
 
 .social-panel p a
 {
-	color: #1D5232;
+	color: var(--social-panel-p-color);
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -450,7 +455,7 @@ section
 
 .social-panel ul li a
 {
-	color: #3CCD76;
+	color: var(--social-panel-p-background);
 	font-size: 20px;
 	display: flex;
 	justify-content: center;
@@ -471,12 +476,13 @@ section
 /*Float Button*/
 .floating-btn
 {
-	background-color: #3CCD76;
+	background-color: #046585;
+	background-image: var(--float-btn-hover);
 	border-radius: 26.5px;
 	border: 3px solid var(--floar-btn-hover);
 	bottom: 20px;
 	box-shadow: 0 16px 22px -17px #03153B;
-	color: #fff;
+	color: #396D6F;
 	cursor: pointer;
 	font-size: 16px;
 	font-weight: bold;
@@ -489,8 +495,8 @@ section
 
 .floating-btn:hover
 {
-	background-image: var(--float-btn-hover);
-	color: #396D6F;
+	background-image: var(--float-btn-hover2);
+	color: #305657;
 }
 
 .floating-btn:focus {outline: none;}
