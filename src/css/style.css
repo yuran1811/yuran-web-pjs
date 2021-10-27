@@ -58,7 +58,19 @@ body.dark
 h2 {font-size: 40px;}
 p {font-size: 25px;}
 
-.linking {color: var(--social-panel-p-background);}
+.p-indent {text-indent: 5%;}
+
+.linking
+{
+	color: var(--social-panel-p-background);
+	text-decoration: none;
+}
+
+.linking:hover
+{
+	text-decoration: underline;
+	font-weight: bold;
+}
 
 .text-box ul li {font-size: 30px;}
 
