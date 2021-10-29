@@ -55,6 +55,11 @@ body.dark
 
 /*main*/
 
+h3 {
+	font-size: 30px;
+	font-style: italic;
+	text-decoration: underline;
+}
 h2 {font-size: 40px;}
 p {font-size: 25px;}
 
