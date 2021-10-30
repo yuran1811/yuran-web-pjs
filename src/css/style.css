@@ -382,22 +382,11 @@ section
 
 	.navbar-container {border-right: none;}
 
-	.textBox p
-	{
-		font-size: 18px;
-	}
-
-	.textBox li
-	{
-		font-size: 
-	}
+	section {padding-top: 20%;}
 
 	h2 {font-size: 29px;}
-
-	.textBox h3
-	{
-		font-size: 20px;
-	}
+	.textBox p {font-size: 18px;}
+	.textBox h3 {font-size: 20px;}
 }
 
 @media (max-width: 600px)
