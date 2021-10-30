@@ -115,7 +115,7 @@ p {font-size: 25px;}
 	align-items: center;
 	font-family: 'Trebuchet MS', sans-serif;
 	height: 50px;
-	left: 34%;
+	left: 39%;
 	padding: 0.5rem;
 	position: relative;
 	text-align: center;
@@ -146,7 +146,6 @@ p {font-size: 25px;}
 }
 
 .main.active {left: 230px; width: calc(100% - 230px);}
-.main.active .title{left: calc(35% - 120px);}
 
 
 /*Nav bar*/
@@ -370,7 +369,58 @@ section
 	border-color: black;
 }
 
-@media (max-width: 460px)
+/*Media Queries*/
+@media (max-width: 480px)
 {
-	
+	.title 
+	{
+		position: fixed;
+		left: 50px;
+		font-size: 9px;
+	}
+	.main.active .title{left: 5px;}
+
+	.navbar-container
+	{
+		border-right: none;
+	}
+}
+
+@media (max-width: 600px)
+{
+	.title 
+	{
+		position: relative;
+		margin: auto;
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 670px) {.title {font-size: 12px; } }
+@media (max-width: 780px) {.main.active .title{left: calc(31% - 120px);}}
+@media (max-width: 920px) {.title {position: absolute;}}
+@media (min-width: 780px) {.main.active .title{left: calc(39% - 120px);}}
+
+@media (max-width: 950px)
+{
+	.banner .imgBox {
+		height: 270px;
+		width: 270px;
+		margin-top: 50px;
+	}
+
+	.banner .imgBox img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 1160px)
+{
+	.banner .imgBox {
+		height: 270px;
+		width: 270px;
+		margin-top: 55px;
+	}
 }
