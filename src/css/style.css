@@ -55,7 +55,7 @@ body.dark
 
 /*main*/
 
-h3 {
+#others .content .textBox h3 {
 	font-size: 30px;
 	font-style: italic;
 	text-decoration: underline;
@@ -368,4 +368,9 @@ section
 	max-width: 19px;
 	border-radius: 4px;
 	border-color: black;
+}
+
+@media (max-width: 460px)
+{
+	
 }
