@@ -370,6 +370,8 @@ section
 }
 
 /*Media Queries*/
+@media (min-width: 780px) {.main.active .title{left: calc(39% - 120px);}}
+
 @media (max-width: 480px)
 {
 	.title 
@@ -385,8 +387,8 @@ section
 	section {padding-top: 20%;}
 
 	h2 {font-size: 29px;}
-	.textBox p {font-size: 18px;}
 	.textBox h3 {font-size: 20px;}
+	.textBox p {font-size: 18px;}
 }
 
 @media (max-width: 600px)
@@ -399,10 +401,19 @@ section
 	}
 }
 
-@media (max-width: 670px) {.title {font-size: 12px; } }
+@media (max-width: 670px)
+{
+	.title {font-size: 12px;}
+	section {padding-top: 15%;}
+
+	h2 {font-size: 35px;}
+	.textBox h3 {font-size: 24px;}
+	.textBox p {font-size: 20px;}
+}
+
 @media (max-width: 780px) {.main.active .title{left: calc(31% - 120px);}}
 @media (max-width: 920px) {.title {position: absolute;}}
-@media (min-width: 780px) {.main.active .title{left: calc(39% - 120px);}}
+
 
 @media (max-width: 950px)
 {
