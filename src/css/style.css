@@ -55,7 +55,7 @@ body.dark
 
 /*main*/
 
-#others .content .textBox h3 {
+.textBox h3 {
 	font-size: 30px;
 	font-style: italic;
 	text-decoration: underline;
@@ -380,9 +380,23 @@ section
 	}
 	.main.active .title{left: 5px;}
 
-	.navbar-container
+	.navbar-container {border-right: none;}
+
+	.textBox p
 	{
-		border-right: none;
+		font-size: 18px;
+	}
+
+	.textBox li
+	{
+		font-size: 
+	}
+
+	h2 {font-size: 29px;}
+
+	.textBox h3
+	{
+		font-size: 20px;
 	}
 }
 
