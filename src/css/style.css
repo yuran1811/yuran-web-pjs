@@ -233,6 +233,7 @@ p {font-size: 25px;}
 	transform: translateY(10px);
 	transition: 0.2s;
 	width: 70%;
+	transition: background-color 0.4s;
 }
 
 ul {list-style: none;}
@@ -320,6 +321,7 @@ section
 	margin: 5px;
 	text-decoration: none;
 	width: 55px;
+	transition: background-color 0.5s;
 }
 
 .socialMedia li a:hover {background: #3084C6; color: #fff;}
