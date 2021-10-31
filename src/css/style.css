@@ -216,14 +216,15 @@ p {font-size: 25px;}
 	z-index: 2;
 }
 
-.links a
+.lk a
 {
 	animation: hide 0.3s forwards ease;
 	color: var(--color);
 	display: inline-block;
 	font-size: 22px;
 	font-weight: 300;
-	left: 5px;
+	left: 0px;
+	padding: 5px 5px;
 	letter-spacing: 1px;
 	opacity: 0;
 	padding: 0.7rem 0;
@@ -231,11 +232,15 @@ p {font-size: 25px;}
 	text-transform: uppercase;
 	transform: translateY(10px);
 	transition: 0.2s;
+	width: 70%;
 }
-.links a:hover {color: var(--heading-title);}
 
 ul {list-style: none;}
-ul li.active a {color: var(--heading-title);}
+.liactive a, .lk a:hover
+{
+	color: var(--background-color);
+	background-color: var(--heading-title);
+}
 
 .navbar-container.active .links a {animation: appear 0.2s forwards ease var(--i);}
 
