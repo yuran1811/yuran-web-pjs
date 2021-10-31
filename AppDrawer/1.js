@@ -7,13 +7,10 @@ const penPoint = canvas.getContext('2d');
 penPoint.fillStyle = 'black';
 
 
-// Chane Size
-var PointSize = 10;
-let ChangeBtn = document.querySelector('#btn-pointsize');
-ChangeBtn.addEventListener('click', (e) =>
-{
-	PointSize = document.querySelector('#point-size').value;
-})
+// Change Size
+var pointSize = 10;
+const ChangeBtn = document.querySelector('#change');
+ChangeBtn.addEventListener('click', (e) => {pointSize = document.querySelector('#size').value;})
 
 
 // Pen
@@ -21,7 +18,7 @@ function Pen_drawPoint(x, y)
 {
 	if (!penPoint_status) return;
 	const circle = new Path2D();
-	circle.arc(x, y, PointSize, 0, 2 * Math.PI);
+	circle.arc(x, y, pointSize, 0, 2 * Math.PI);
 	penPoint.fill(circle);
 }
 
@@ -56,7 +53,7 @@ Mode.addEventListener('click', (e) =>
 
 
 // Draw Line
-let LineDraw = document.querySelector('#draw-line');
+let LineDraw = document.querySelector('#line');
 
 LineDraw.addEventListener('click', (e) =>
 {
@@ -85,16 +82,16 @@ LineDraw.addEventListener('click', (e) =>
 
 
 // Color Change
-let colorGet = document.querySelector('#color-get');
+let colorGet = document.querySelector('#get');
 colorGet.addEventListener('click', (e) =>
 {
-	const colorPen = document.querySelector('#color-change').value;
+	const colorPen = document.querySelector('#color').value;
 	penPoint.fillStyle = colorPen;
 })
 
 
 // Clear
-const ButtonClear = document.querySelector('#btn-clear');
+const ButtonClear = document.querySelector('#reset');
 ButtonClear.addEventListener('click', (e) =>
 {
 	penPoint.clearRect(0, 0, 1100, 600);
