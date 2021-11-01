@@ -1,16 +1,15 @@
-const canvas = document.querySelector('#draw');
+let canvas = document.querySelector('#draw');
 
 let penPoint_status = false;
 let penLine_status = false;
 
-const penPoint = canvas.getContext('2d');
-penPoint.fillStyle = 'black';
+const pen = canvas.getContext('2d');
+pen.fillStyle = 'black';
 
+let lineArray = [];
+let lineArray_index = 0;
 
-// Change Size
 var pointSize = 10;
-const ChangeBtn = document.querySelector('#change');
-ChangeBtn.addEventListener('click', (e) => {pointSize = document.querySelector('#size').value;})
 
 
 // Pen
@@ -18,8 +17,10 @@ function Pen_drawPoint(x, y)
 {
 	if (!penPoint_status) return;
 	const circle = new Path2D();
+	pointSize = document.querySelector('#size').value;
 	circle.arc(x, y, pointSize, 0, 2 * Math.PI);
-	penPoint.fill(circle);
+	pen.fillStyle = document.querySelector('#color').value;
+	pen.fill(circle);
 }
 
 function Pen_drawFree(e, isDown)
@@ -60,33 +61,34 @@ LineDraw.addEventListener('click', (e) =>
 	penLine_status = true;
 	penPoint_status = false;
 
-	var mouseX = -1;
-	var mouseY = -1;
-	canvas.addEventListener('click', (e) =>
+	var mouseX = 0;
+	var mouseY = 0;
+	canvas.addEventListener('mousedown', (e) =>
 	{
-		mouseX = e.clientX;
-		mouseY = e.clientY;
+		const {clientX, clientY} = e;
+		mouseX = clientX;
+		mouseY = clientY;
 	})
 	canvas.addEventListener('click', (e) =>
 	{
 		if (!penLine_status) return;
-		const penLine = canvas.getContext('2d');
 		const react = canvas.getBoundingClientRect();
-		// penLine.moveTo(e.clientX, e.clientY);
-		// penLine.lineTo(mouseX - react.left, mouseY - react.top);
-		penLine.moveTo(mouseX, mouseY);
-		penLine.lineTo(e.clientX - react.left, e.clientY - react.top);
-		penLine.stroke();
+
+		const {clientX, clientY} = e;
+		pen.beginPath();
+		pen.lineWidth = document.querySelector('#size').value;
+		pen.strokeStyle = document.querySelector('#color').value;
+		pen.moveTo(mouseX - react.left, mouseY - react.top);
+		pen.lineTo(clientX - react.left, clientY - react.top);
+		pen.stroke();
+
+		lineArray[++lineArray_index] = {
+			fi_X:(mouseX - react.left),
+			fi_Y:(mouseY - react.top),
+			se_X:(clientX - react.left),
+			se_Y:(clientY - react.top)
+		};
 	})
-})
-
-
-// Color Change
-let colorGet = document.querySelector('#get');
-colorGet.addEventListener('click', (e) =>
-{
-	const colorPen = document.querySelector('#color').value;
-	penPoint.fillStyle = colorPen;
 })
 
 
@@ -94,6 +96,23 @@ colorGet.addEventListener('click', (e) =>
 const ButtonClear = document.querySelector('#reset');
 ButtonClear.addEventListener('click', (e) =>
 {
-	penPoint.clearRect(0, 0, 1100, 600);
 	penLine_status = penPoint_status = 0;
+	pen.clearRect(0, 0, canvas.width, canvas.height);
+	pen.strokeStyle = "white";
+	for (let i = 1; i <= lineArray_index; i++)
+	{
+		pen.moveTo(lineArray[i].fi_X, lineArray[i].fi_Y);
+		pen.lineTo(lineArray[i].se_X, lineArray[i].se_Y);
+		pen.stroke();
+	}
+	pen.strokeStyle = pen.fillStyle = "black";
+	lineArray_index = 0;
 })
+
+
+// Resize
+document.querySelector('#resize').addEventListener('click', (e) =>
+{
+	canvas.width = document.querySelector('#w-size').value;
+	canvas.height = document.querySelector('#h-size').value;
+});
