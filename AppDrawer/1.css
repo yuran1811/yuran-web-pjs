@@ -71,8 +71,7 @@ h1::before
 
 ul {list-style-type: none;}
 .fa-github {background-color: white; border-radius: 50%; padding: 2px;}
-a:visited {color: black;}
-a:active {color: black;}
+a:link, a:visited, a:active {color: black;}
 
 
 /*Main*/
@@ -100,11 +99,15 @@ a:active {color: black;}
 	justify-content: flex-start;
 }
 
+label {margin: 0px 5px;}
 .tool-btn {
 	border-radius: 50px;
 	margin: 5px 5px;
 	cursor: pointer;
+	border-style: none;
+	padding: 5px;
 }
+.tool-btn:hover, .btn-active {background-color: #FF7D7D;}
 
 #color {border-radius: 0;
 #size {width: 50px;}
