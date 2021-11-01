@@ -3,15 +3,14 @@
 	--heading-hover-text: -webkit-linear-gradient(#2A6748, #18734B);
 	--heading-hover: linear-gradient(35deg, #A3CBEB, #C7E9A8);
 	--border-color: black;
+	--color-canvas: white;
 }
 
-body
-{
-	width: 1100px;
-	height: 600px;
-	border: 1px solid var(--border-color);
+* {box-sizing: border-box;}
+
+body {
 	display: flex;
-	position: relative;
+	flex-direction: column;
 }
 
 .dark
@@ -19,121 +18,31 @@ body
 	--heading-hover: linear-gradient(35deg, #497397, #9381A2, #DD88A0);
 	--heading-hover-text: -webkit-linear-gradient(#EAE5C9, #6CC6CB);
 	--border-color: white;
+	--color-canvas: #E6E6E6;
 	background-color: #222;
 	color: #e6e6e6;
 }
 
-#draw
-{
-	cursor: pointer;
-	border-left: 1px solid black;
-}
 
-#point-size
-{
-	position: absolute;
-	right: 58px;
-	top: -1px;
-	width: 120px;
-	height: 29px;
-}
-
-#btn-pointsize
-{
-	position: absolute;
-	width: 60px;
-	height: 35px;
-	right: -1px;
-	top: -1px;
-}
-
-#link-github
-{
-	background-color: white;
-	border-radius: 50px;
-	position: absolute;
-	right: -60px;
-	bottom: 0px;
-	width: 46px;
-	height: 46px;
-}
-
-#switch-mode
-{
-	cursor: pointer;
-	position: absolute;
-	height: 35px;
-	width: 60px;
-	text-align: center;
-	top: -1px;
-	right: -60px;
-	background-color: #FB8C8C;
-	border-color: #FB8C8C;
-}
-
-#btn-clear
-{
-	cursor: pointer;
-	position: absolute;
-	top: 33px;
-	right: -60px;
-	width: 60px;
-	height: 35px;
-}
-
-#draw-line
-{
-	cursor: pointer;
-	position: absolute;
-	right: -60px;
-	top: 67px;
-	height: 35px;
-	width: 60px;
-	text-align: center;
-}
-
-#pen
-{
-	cursor: pointer;
-	position: absolute;
-	right: -60px;
-	top: 101px;
-	height: 35px;
-	width: 60px;
-	text-align: center;
-}
-
-#color-change
-{
-	position: absolute;
-	right: -60px;
-	top: 135px;
-	height: 35px;
-	width: 60px;
-}
-
-#color-get
-{
-	position: absolute;
-	right: -119px;
-	top: 135px;
-	height: 35px;
-	width: 60px;
+/*Title*/
+.title {
+	width: 100%;
+	height: 80px;
 }
 
 h1
 {
+	font-family: 'Trebuchet MS', sans-serif;
 	background: var(--heading-hover-text);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
-	font-family: 'Trebuchet MS', sans-serif;
-	align-items: center;
+
 	position: absolute;
-	right: -225px;
-	top: 200px;
-	padding: 0.5rem;
-	width: 135px;
-	height: auto;
+	padding: 5px 10px;
+	margin: 1%;
+	width: 20%;
+	left: 42%;
+	right: 38%;
 }
 
 h1::before
@@ -150,20 +59,52 @@ h1:hover::before
 
 h1::before
 {
-	content: " ";
-	z-index: -1;
-	display: block;
-	position: absolute;
-	inset: 0 0 0 0;
-	top: 0; left: 0; right: 0; bottom: 0;
 	background: var(--heading-hover);
+	content: " ";
+	display: block;
+	inset: 0 0 0 0;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
 	transition: transform 0.3s ease;
+	z-index: -1;
 }
 
-#theme
+ul {list-style-type: none;}
+.fa-github {background-color: white; border-radius: 50%; padding: 2px;}
+a:visited {color: black;}
+a:active {color: black;}
+
+
+/*Main*/
+#draw
 {
+	border: 1px solid black;
 	cursor: pointer;
-	position: absolute;
-	top: 100px;
-	right: -150px;
+	background-color: var(--color-canvas);
 }
+
+.main {
+	display: flex;
+	flex-direction: row;
+}
+
+/*Tool Container*/
+.tool-container
+{
+	align-content: space-between;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	flex: 20%;
+	justify-content: flex-start;
+}
+
+.tool-btn {
+	border-radius: 50px;
+	margin: 5px 5px;
+	cursor: pointer;
+}
+
+#color {border-radius: 0;
+#size {width: 50px;}
