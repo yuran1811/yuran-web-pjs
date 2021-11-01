@@ -20,14 +20,29 @@
 		<div class="tool-container">
 			<button class="tool-btn" id="switch-mode"><em><strong>Switch Mode</strong></em></button>
 			<button class="tool-btn" id="reset">Reset</button>
-			<button class="tool-btn" id="line">Line</button>
-			<button class="tool-btn" id="pen">Pen</button>
-			<input class="tool-btn" id="color" type="color" name="favcolor" value="#000000">
-			<input class="tool-btn" id="size" type="number" placeholder="Change the size" value="10" min="1" max="400">
+			<button class="tool-btn change" id="line">Line</button>
+			<button class="tool-btn change btn-active" id="pen">Pen</button>
+
+			<label>
+				Color:
+				<input class="tool-btn" id="color" type="color" name="favcolor" value="#000000">
+			</label>
+
+			<label>
+				Size:				
+				<input class="tool-btn" id="size" type="number" placeholder="Change the size" value="10" min="1" max="400">
+			</label>
 
 			<div class="resize">
-				<input class="tool-btn" id="w-size" type="number" placeholder="width" value="900" min="50" max="1200">
-				<input class="tool-btn" id="h-size" type="number" placeholder="height" value="500" min="50" max="700">
+				<label>
+					Width:
+					<input class="tool-btn" id="w-size" type="number" placeholder="width" value="900" min="50" max="1200">
+				</label>
+				<br>
+				<label>
+					Height:
+					<input class="tool-btn" id="h-size" type="number" placeholder="height" value="500" min="50" max="700">
+				</label>
 				<button class="tool-btn" id="resize">Resize</button>
 			</div>
 		</div>
