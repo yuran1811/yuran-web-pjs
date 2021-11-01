@@ -4,33 +4,34 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="icon" href="https://i.pinimg.com/originals/1b/c4/97/1bc49707d93839ea0acf6af5e69f14d2.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 	<link rel="stylesheet" href="./1.css"/>
 	<title>App Drawer</title>
 </head>
-
 <body>
-	<h1>App<br>Drawer</h1>
-	<canvas id="draw"></canvas>
-	<div class="tool-container">
-		<button class="tool-btn" id="switch-mode"><em><strong>Switch Mode</strong></em></button>
-		<button class="tool-btn" id="reset">Reset</button>
-		<button class="tool-btn" id="line">Line</button>
-		<button class="tool-btn" id="pen">Pen</button>
-
-		<div class="point-size">
-			<input class="tool-btn" id="size" type="number" placeholder="Change the size" value="10">
-			<button class="tool-btn" id="change">Change</button>			
-		</div>
-
-		<div class="color-change">		
-			<input class="tool-btn" id="color" type="color" name="favcolor" value="#000000">
-			<button class="tool-btn" id="get">Get Color</button>
-		</div>
+	<div class="title">
+		<h1>App Drawer</h1>
+		<ul>
+			<li><a target="_blank" href="https://github.com/yuran1811/Yuran-Web-Projects/tree/main/AppDrawer"><i class="fab fa-github fa-3x"></i></a></li>
+		</ul>
 	</div>
-	<div class="contact-panel">
-		<a id="link-github" href="https://github.com/yuran1811" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="50" height="50"></a>
+	<div class="main">
+		<div class="canvas"> <canvas id="draw" height="500px" width="900px"></canvas> </div>
+		<div class="tool-container">
+			<button class="tool-btn" id="switch-mode"><em><strong>Switch Mode</strong></em></button>
+			<button class="tool-btn" id="reset">Reset</button>
+			<button class="tool-btn" id="line">Line</button>
+			<button class="tool-btn" id="pen">Pen</button>
+			<input class="tool-btn" id="color" type="color" name="favcolor" value="#000000">
+			<input class="tool-btn" id="size" type="number" placeholder="Change the size" value="10" min="1" max="400">
+
+			<div class="resize">
+				<input class="tool-btn" id="w-size" type="number" placeholder="width" value="900" min="50" max="1200">
+				<input class="tool-btn" id="h-size" type="number" placeholder="height" value="500" min="50" max="700">
+				<button class="tool-btn" id="resize">Resize</button>
+			</div>
+		</div>
 	</div>
 </body>
-
 <script src="./1.js"></script>
 </html>
