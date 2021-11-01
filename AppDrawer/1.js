@@ -40,22 +40,28 @@ PenDraw.addEventListener('click', (e) =>
 	canvas.addEventListener('mouseup', (e) => {isDown = false;})
 	canvas.addEventListener('mousedown', (e) => {isDown = 1; Pen_drawFree(e, isDown);});
 	canvas.addEventListener('mousemove', (e) => {Pen_drawFree(e, isDown)});
-	// penPoint_status = false;
 })
 
 
 // Theme
+let isDark = 0;
 const Mode = document.querySelector('#switch-mode');
-Mode.addEventListener('click', (e) =>
-{
-	let Ele = document.body;
-	Ele.classList.toggle("dark");
-})
+Mode.addEventListener('click', (e) => {
+	document.body.classList.toggle("dark");
+	if (isDark)
+	{
+		Mode.innerHTML = "Dark";
+		isDark = 0;
+	} else
+	{
+		Mode.innerHTML = "Light";
+		isDark = 1;
+	}
+});
 
 
 // Draw Line
 let LineDraw = document.querySelector('#line');
-
 LineDraw.addEventListener('click', (e) =>
 {
 	penLine_status = true;
@@ -82,37 +88,50 @@ LineDraw.addEventListener('click', (e) =>
 		pen.lineTo(clientX - react.left, clientY - react.top);
 		pen.stroke();
 
-		lineArray[++lineArray_index] = {
-			fi_X:(mouseX - react.left),
-			fi_Y:(mouseY - react.top),
-			se_X:(clientX - react.left),
-			se_Y:(clientY - react.top)
-		};
+		// lineArray[++lineArray_index] = {
+		// 	fi_X:(mouseX - react.left),
+		// 	fi_Y:(mouseY - react.top),
+		// 	se_X:(clientX - react.left),
+		// 	se_Y:(clientY - react.top)
+		// };
 	})
 })
 
 
-// Clear
+// Clear & Resize
+function Reset() {
+	canvas.width = document.querySelector('#w-size').value;
+	canvas.height = document.querySelector('#h-size').value;
+}
+
 const ButtonClear = document.querySelector('#reset');
 ButtonClear.addEventListener('click', (e) =>
 {
-	penLine_status = penPoint_status = 0;
-	pen.clearRect(0, 0, canvas.width, canvas.height);
-	pen.strokeStyle = "white";
-	for (let i = 1; i <= lineArray_index; i++)
-	{
-		pen.moveTo(lineArray[i].fi_X, lineArray[i].fi_Y);
-		pen.lineTo(lineArray[i].se_X, lineArray[i].se_Y);
-		pen.stroke();
+	penPoint_status = penLine_status = 0;
+	Reset();
+	// pen.clearRect(0, 0, canvas.width, canvas.height);
+	// pen.strokeStyle = "white";
+	// for (let i = 1; i <= lineArray_index; i++)
+	// {
+	// 	pen.moveTo(lineArray[i].fi_X, lineArray[i].fi_Y);
+	// 	pen.lineTo(lineArray[i].se_X, lineArray[i].se_Y);
+	// 	pen.stroke();
+	// }
+	// pen.strokeStyle = pen.fillStyle = "black";
+	// lineArray_index = 0;
+});
+document.querySelector('#resize').addEventListener('click', Reset());
+
+
+// Button When Click
+const btnContainer = document.querySelector('.tool-container');
+var btnList = btnContainer.getElementsByClassName("change");
+btnContainer.addEventListener('mouseover', function() {
+	for (var i = 0; i < btnList.length; i++) {
+		btnList[i].addEventListener("click", function() {
+			var current = document.getElementsByClassName("btn-active");
+			current[0].className = current[0].className.replace(" btn-active", "");
+			this.className += " btn-active";
+		});
 	}
-	pen.strokeStyle = pen.fillStyle = "black";
-	lineArray_index = 0;
-})
-
-
-// Resize
-document.querySelector('#resize').addEventListener('click', (e) =>
-{
-	canvas.width = document.querySelector('#w-size').value;
-	canvas.height = document.querySelector('#h-size').value;
 });
