@@ -1,4 +1,5 @@
 # About "App Drawer"
+## This version is the beta version, go to the [**official site**](https://yuran1811.github.io/App-Drawer/)
 ## These are the features of this app:
 + [x] Draw by Pen
 + [x] Draw a line
