@@ -120,7 +120,7 @@ ButtonClear.addEventListener('click', (e) =>
 	// pen.strokeStyle = pen.fillStyle = "black";
 	// lineArray_index = 0;
 });
-document.querySelector('#resize').addEventListener('click', Reset());
+document.querySelector('#resize').addEventListener('click', (e) => Reset());
 
 
 // Button When Click
