@@ -22,7 +22,7 @@
 ::-webkit-scrollbar {width: 0px; background: transparent;}
 
 
-/*body*/
+/*Body*/
 body
 {
 	background: var(--background-color);
@@ -30,7 +30,6 @@ body
 	overflow: hidden;
 	height: 100%;
 }
-
 body.dark
 {
 	--background-color: #1E2025;
@@ -47,108 +46,20 @@ body.dark
 }
 
 
-/*Header*/
-h2 {
-	font-size: calc(2vw + 2vh);
-}
-
+/*Heading & P*/
+h2 {font-size: calc(2vw + 2vh);}
 .textBox h3 {
 	font-size: calc(1.7vw + 1.7vh);
 	font-style: italic;
 	text-decoration: underline;
 }
-
-p {
-	font-size: calc(1.5vw + 1.5vh);
-}
+p {font-size: calc(1.5vw + 1.5vh);}
 
 .p-indent {text-indent: 5%;}
 .p-indent2 {text-indent: 10%;}
 
-.linking
-{
-	color: var(--social-panel-p-background);
-	text-decoration: none;
-}
 
-.linking:hover
-{
-	text-decoration: underline;
-	font-weight: bold;
-}
-
-
-/*Main*/
-.main
-{
-	background: var(--background-color);
-	height: 100%;
-	left: 0px;
-	overflow: auto;
-	position: absolute;
-	transition: width 0.5s, left 0.5s;
-	width: calc(100% - 0px);
-}
-
-.main .top-bar
-{
-	align-items: center;
-	background: var(--background-color);
-	border-bottom: 1.25px solid var(--border-color);
-	display: flex;
-	height: 60px;
-	justify-content: space-between;
-	padding: 0 40px;
-	position: fixed;
-	top: 0;
-	transition: width 0.5s, left 0.5s;
-	width: 100%;
-	z-index: 10000;
-}
-
-.title
-{
-	background: var(--heading-hover-text);
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	align-items: center;
-	font-family: 'Trebuchet MS', sans-serif;
-	font-size: calc(1.2vw + 0.25vh);
-	height: 50px;
-	left: 39%;
-	padding: 0.5rem;
-	position: relative;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	width: auto;
-	transition: width 0.5s, left 0.5s;
-}
-
-.title:hover::before
-{
-	transform: scaleX(1);
-	transform-origin: bottom left;
-}
-
-.title::before
-{
-	background: var(--heading-hover);
-	content: " ";
-	display: block;
-	inset: 0 0 0 0;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	transform-origin: bottom right;
-	transform: scaleX(0);
-	transition: transform 0.3s ease;
-	z-index: -1;
-}
-
-.main.active {left: 25vw; width: 75vw;}
-
-
-/*Nav bar*/
+/*Nav Bar*/
 .navbar-container
 {
 	border-right: 1.25px solid var(--border-color);
@@ -164,8 +75,95 @@ p {
 	overflow: hidden;
 	transform-style: preserve-3d;
 }
-
 .navbar-container.active {width: 25vw;}
+
+.links
+{
+	align-items: center;
+	height: 100%;
+	left: 15px;
+	margin-left: 10px;
+	margin-top: 15px;
+	overflow: hidden;
+	position: relative;
+	top: 50px;
+	width: 100%;
+	z-index: 2;
+}
+
+ul {list-style: none;}
+
+.lk a
+{
+	color: var(--color);
+	display: inline-block;
+	font-size: calc(0.5vw + 2.5vh);
+	font-weight: 300;
+	left: 0px;
+	letter-spacing: 1px;
+	opacity: 0;
+	width: 70%;
+
+	padding: 0.7rem 0;
+
+	text-decoration: none;
+	text-transform: uppercase;
+
+	animation: hide 0.3s forwards ease;
+
+	transform: translateY(10px);
+	transition: 0.2s;
+	transition: background-color 0.4s;
+}
+.liactive a, .lk a:hover
+{
+	color: var(--background-color);
+	background-color: var(--heading-title);
+}
+
+.navbar-container.active .links a {animation: appear 0.2s forwards ease var(--i);}
+
+@keyframes appear
+{
+	from {opacity: 0; transform: translateY(10px);}
+	to {opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes hide
+{
+	from {opacity: 1; transform: translateY(0px);}
+	to {opacity: 0; transform: translateY(10px);}
+}
+
+
+/*Main*/
+.main
+{
+	background: var(--background-color);
+	left: 0px;
+	overflow: auto;
+	position: absolute;
+	transition: width 0.5s, left 0.5s;
+	width: 100%;
+	height: 100%;
+}
+.main.active {left: 25vw; width: 75vw;}
+
+/*Main Topbar*/
+.main .top-bar
+{
+	align-items: center;
+	background: var(--background-color);
+	border-bottom: 1.25px solid var(--border-color);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 40px;
+	position: fixed;
+	transition: width 0.5s, left 0.5s;
+	width: 100%;
+	height: 60px;
+	z-index: 1000;
+}
 
 .menu {
 	align-items: left;
@@ -177,6 +175,7 @@ p {
 	padding: auto;
 	position: fixed;
 	width: 32px;
+	z-index: 10;
 }
 
 .bar {
@@ -204,62 +203,44 @@ p {
 .menu.active .bar {transform: rotate(360deg); background-color: transparent;}
 .menu.active .bar::after {transform: translateY(0) rotate(-45deg);}
 
-.links
+
+/*Title*/
+.title
 {
-	align-items: center;
-	height: 100%;
-	left: 15px;
-	margin-left: 10px;
-	margin-top: 15px;
-	overflow: hidden;
-	position: relative;
-	top: 50px;
+	background: var(--heading-hover-text);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-family: 'Trebuchet MS', sans-serif;
+	height: 50px;
 	width: 100%;
-	z-index: 2;
-}
-
-.lk a
-{
-	color: var(--color);
-	display: inline-block;
-	font-size: calc(0.5vw + 2.5vh);
-	font-weight: 300;
-	left: 0px;
-	letter-spacing: 1px;
-	opacity: 0;
-	width: 70%;
-
-	padding: 0.7rem 0;
-
-	text-decoration: none;
+	left: 0;
+	right: 0;
+	letter-spacing: 2.5px;
+	padding: 0.5rem;
+	position: absolute;
+	text-align: center;
 	text-transform: uppercase;
-
-	animation: hide 0.3s forwards ease;
-
-	transform: translateY(10px);
-	transition: 0.2s;
-	transition: background-color 0.4s;
+	transition: width 0.5s, left 0.5s;
 }
 
-ul {list-style: none;}
-.liactive a, .lk a:hover
+.title::before
 {
-	color: var(--background-color);
-	background-color: var(--heading-title);
+	background: var(--heading-hover);
+	content: " ";
+	display: block;
+	inset: 0 0 0 0;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	transform-origin: bottom right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease;
+	z-index: -1;
 }
 
-.navbar-container.active .links a {animation: appear 0.2s forwards ease var(--i);}
-
-@keyframes appear
+.title:hover::before
 {
-	from {opacity: 0; transform: translateY(10px);}
-	to {opacity: 1; transform: translateY(0px);}
-}
-
-@keyframes hide
-{
-	from {opacity: 1; transform: translateY(0px);}
-	to {opacity: 0; transform: translateY(10px);}
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
 
 
@@ -272,6 +253,18 @@ section
 }
 
 #banner {padding: 7%;}
+
+.linking
+{
+	color: var(--social-panel-p-background);
+	text-decoration: none;
+}
+
+.linking:hover
+{
+	text-decoration: underline;
+	font-weight: bold;
+}
 
 .heading-title {
 	color: var(--heading-title);
@@ -405,13 +398,20 @@ section
 /*Media Queries*/
 @media (min-width: 480px)
 {
+	.title {
+		font-size: 15px;
+	}
 
+	section {
+		padding-top: 15%;
+	}
 }
 
 @media (min-width: 820px)
 {
 	.main.active {left: 230px; width: calc(100% - 230px);}
 	.navbar-container.active {width: 230px;}
+
 }
 
 @media (min-width: 1000px)
