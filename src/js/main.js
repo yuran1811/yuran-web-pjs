@@ -20,3 +20,11 @@ menuToggle.addEventListener("click", () => {
 
 const ToggleBtn = document.querySelector('#toggle-btn');
 ToggleBtn.addEventListener('change', (e) => {document.body.classList.toggle('dark');});
+
+const demoLinking = document.querySelector('#demo-link');
+demoLinking.addEventListener('click', function() {
+	document.querySelector('iframe').classList.remove('active')
+})
+demoLinking.addEventListener('dblclick', function() {
+	document.querySelector('iframe').classList.toggle('active')
+});
