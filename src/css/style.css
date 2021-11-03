@@ -293,12 +293,12 @@ section
 }
 
 .banner .imgBox {
-	margin-bottom: 20px;
+	margin: calc(4vh + 2vw) 0;
 	position: relative;
 	border-radius: 50%;
 	overflow: hidden;
-	height: 300px;
-	width: 300px;
+	height: calc(25vh + 15vw);
+	width: calc(25vh + 15vw);
 }
 
 .imgHoverText {
@@ -364,13 +364,13 @@ section
 	border-radius: 50px;
 	cursor: pointer;
 	display: flex;
-	height: 26px;
 	justify-content: space-between;
 	padding: 5px;
 	position: fixed;
 	right: 25px;
 	top: 15px;
 	transform: scale(1.5);
+	height: 26px;
 	width: 50px;
 }
 
@@ -378,21 +378,20 @@ section
 {
 	background-color: #fff;
 	border-radius: 50%;
-	height: 22px;
 	left: 2px;
 	position: absolute;
 	top: 2px;
 	transform: translateX(0px);
 	transition: transform 0.15s linear;
+	height: 22px;
 	width: 22px;
 }
 
 .checkbox
 {
-	position: absolute;
 	opacity: 0;
+	position: absolute;
 }
-
 .checkbox:checked + .label .ball {transform: translateX(24px);}
 
 .moon, .sun
@@ -404,8 +403,25 @@ section
 
 
 /*Media Queries*/
+@media (min-width: 480px)
+{
+
+}
+
 @media (min-width: 820px)
 {
 	.main.active {left: 230px; width: calc(100% - 230px);}
 	.navbar-container.active {width: 230px;}
+}
+
+@media (min-width: 1000px)
+{
+	.banner .imgBox {
+		border-radius: 50%;
+		margin: 10px 0;
+		overflow: hidden;
+		position: relative;
+		height: calc(25vh + 15vw);
+		width: calc(25vh + 15vw);
+	}	
 }
