@@ -191,11 +191,11 @@ ul {list-style: none;}
 /*Main Topbar*/
 .main .top-bar
 {
-	align-items: center;
-	background: var(--background-color);
 	border-bottom: 1.25px solid var(--border-color);
+	background: var(--background-color);
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
 	padding: 0 40px;
 	position: fixed;
 	transition: width 0.5s, left 0.5s;
@@ -387,6 +387,8 @@ section
 {
 	opacity: 0;
 	position: absolute;
+	top: 0;
+	right: 0;
 }
 .checkbox:checked + .label .ball {transform: translateX(24px);}
 
@@ -410,6 +412,14 @@ section
 	.main.active {left: 230px; width: calc(100% - 230px);}
 	.navbar-container.active {width: 230px;}
 	section {padding-top: 7%;}
+
+	h2 {font-size: 5vh;}
+	.textBox h3 {
+		font-size: 4vh;
+		font-style: italic;
+		text-decoration: underline;
+	}
+	p {font-size: 3vh;}
 }
 
 @media (min-width: 1000px)
@@ -418,7 +428,6 @@ section
 		border-radius: 50%;
 		margin: 10px 0;
 		overflow: hidden;
-		position: relative;
 		height: calc(25vh + 15vw);
 		width: calc(25vh + 15vw);
 	}	
