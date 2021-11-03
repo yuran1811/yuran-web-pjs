@@ -149,61 +149,6 @@ ul {list-style: none;}
 }
 .main.active {left: 25vw; width: 75vw;}
 
-/*Main Topbar*/
-.main .top-bar
-{
-	align-items: center;
-	background: var(--background-color);
-	border-bottom: 1.25px solid var(--border-color);
-	display: flex;
-	justify-content: space-between;
-	padding: 0 40px;
-	position: fixed;
-	transition: width 0.5s, left 0.5s;
-	width: 100%;
-	height: 60px;
-	z-index: 1000;
-}
-
-.menu {
-	align-items: left;
-	cursor: pointer;
-	display: block;
-	height: 32px;
-	left: 5px;
-	padding: 2%;
-	padding: auto;
-	position: fixed;
-	width: 32px;
-	z-index: 10;
-}
-
-.bar {
-	background-color: var(--color);
-	border-radius: 2.5px;
-	height: 1.5px;
-	position: relative;
-	transition: 0.5s;
-	width: 30px;
-}
-
-.bar::before, .bar::after {
-	content: "";
-	position: absolute;
-	width: inherit;
-	height: inherit;
-	background-color: var(--color);
-	transition: 0.5s;
-}
-
-.bar::before {transform: translateY(-9px);}
-.bar::after {transform: translateY(9px);}
-
-.menu.active .bar::before {transform: translateY(0) rotate(45deg);}
-.menu.active .bar {transform: rotate(360deg); background-color: transparent;}
-.menu.active .bar::after {transform: translateY(0) rotate(-45deg);}
-
-
 /*Title*/
 .title
 {
@@ -243,17 +188,77 @@ ul {list-style: none;}
 	transform-origin: bottom left;
 }
 
+/*Main Topbar*/
+.main .top-bar
+{
+	align-items: center;
+	background: var(--background-color);
+	border-bottom: 1.25px solid var(--border-color);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 40px;
+	position: fixed;
+	transition: width 0.5s, left 0.5s;
+	width: 100%;
+	height: 60px;
+	z-index: 1000;
+}
+
+.menu {
+	align-items: left;
+	cursor: pointer;
+	display: block;
+	height: 32px;
+	left: 5px;
+	padding: 2%;
+	padding: auto;
+	position: fixed;
+	width: 32px;
+	z-index: 10;
+}
+
+.bar {
+
+	background-color: var(--color);
+	border-radius: 2.5px;
+	height: 1.5px;
+	position: relative;
+	transition: 0.5s;
+	width: 30px;
+}
+
+.bar::before, .bar::after {
+	content: "";
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	background-color: var(--color);
+	transition: 0.5s;
+}
+
+.bar::before {transform: translateY(-9px);}
+.bar::after {transform: translateY(9px);}
+
+.menu.active .bar::before {transform: translateY(0) rotate(45deg);}
+.menu.active .bar {transform: rotate(360deg); background-color: transparent;}
+.menu.active .bar::after {transform: translateY(0) rotate(-45deg);}
+
 
 /*Content*/
 section
 {
 	color: var(--color);
-	padding: 5%;
+	padding: 1% 5%;
 	position: relative;
 }
 
-#banner {padding: 7%;}
+.heading-title {
+	color: var(--heading-title);
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
 
+/*Banner*/
 .linking
 {
 	color: var(--social-panel-p-background);
@@ -266,16 +271,11 @@ section
 	font-weight: bold;
 }
 
-.heading-title {
-	color: var(--heading-title);
-	letter-spacing: 2px;
-	text-transform: uppercase;
-}
-
 .banner {
 	align-items: center;
 	display: flex;
 	justify-content: center;
+	padding: 7%;
 }
 
 .banner .content {
@@ -294,26 +294,27 @@ section
 	width: calc(25vh + 15vw);
 }
 
-.imgHoverText {
-	position: absolute;
-	font-size: 24px;
-	text-align: center;
-	left: 20%;
-	top: 32%;
-}
-
 .imgHover
 {
-	position: absolute;
-	border-radius: 50%;
-	height: 300px;
-	width: 300px;
-	margin: auto;
 	background-color: #2196f3;
-	transition: 0.8s ease;
+	border-radius: 50%;
 	opacity: 0;
+	position: absolute;
+	transition: 0.8s ease;
+	width: calc(25vh + 15vw);
+	height: calc(25vh + 15vw);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .imgHover:hover {opacity: 0.95;}
+
+.imgHoverText {
+	position: absolute;
+	text-align: center;
+	font-size: 24px;
+	margin: auto;
+}
 
 .banner .imgBox img {
 	object-fit: cover;
@@ -321,6 +322,8 @@ section
 	width: 100%;
 }
 
+
+/*Social Links*/
 .socialMedia {
 	display: flex;
 	position: relative;
@@ -398,20 +401,15 @@ section
 /*Media Queries*/
 @media (min-width: 480px)
 {
-	.title {
-		font-size: 15px;
-	}
-
-	section {
-		padding-top: 15%;
-	}
+	.title {font-size: 15px;}
+	section {padding-top: 15%;}
 }
 
 @media (min-width: 820px)
 {
 	.main.active {left: 230px; width: calc(100% - 230px);}
 	.navbar-container.active {width: 230px;}
-
+	section {padding-top: 7%;}
 }
 
 @media (min-width: 1000px)
