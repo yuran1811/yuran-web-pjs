@@ -355,23 +355,29 @@ section
 
 
 /*Theme Switch*/
-.theme-toggle {position: relative;}
-
-.label
-{
-	align-items: center;
-	background-color: black;
-	border-radius: 50px;
-	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
-	padding: 5px;
+.theme-toggle,
+.checkbox,
+.label {
 	position: fixed;
 	right: 25px;
 	top: 15px;
-	transform: scale(1.5);
+}
+
+.label
+{
+	background-color: black;
+	border-radius: 50px;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 5px;
 	height: 26px;
 	width: 50px;
+
+	transform: scale(1.5);
 }
 
 .label .ball
@@ -390,17 +396,13 @@ section
 .checkbox
 {
 	opacity: 0;
-	position: absolute;
-	top: 0;
-	right: 0;
 }
 .checkbox:checked + .label .ball {transform: translateX(24px);}
 
 .moon, .sun
 {
-	max-width: 19px;
-	border-radius: 4px;
-	border-color: black;
+	border-radius: 10px;
+	z-index: 10;
 }
 
 
