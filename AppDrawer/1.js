@@ -1,15 +1,13 @@
-let canvas = document.querySelector('#draw');
-
-let penPoint_status = false;
-let penLine_status = false;
-
+const canvas = document.querySelector('#draw');
 const pen = canvas.getContext('2d');
 pen.fillStyle = 'black';
 
-let lineArray = [];
-let lineArray_index = 0;
-
+var penPoint_status = false;
+var penLine_status = false;
 var pointSize = 10;
+
+// let lineArray = [];
+// let lineArray_index = 0;
 
 
 // Pen
@@ -31,7 +29,7 @@ function Pen_drawFree(e, isDown)
 	Pen_drawPoint(clientX - react.left, clientY - react.top);
 }
 
-let PenDraw = document.querySelector('#pen');
+const PenDraw = document.querySelector('#pen');
 PenDraw.addEventListener('click', (e) =>
 {
 	let isDown = false;
