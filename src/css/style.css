@@ -94,24 +94,24 @@ p {
 	height: 100%;
 	width: 0px;
 
+	position: fixed;
 	top: 0;
 	left: 0;
 
-	position: fixed;
 	overflow: hidden;
 	transform-style: preserve-3d;
 }
 
 .links {
 	align-items: center;
-	height: 100%;
-	left: 15px;
 	margin-left: 10px;
 	margin-top: 15px;
 	overflow: hidden;
 	position: relative;
 	top: 50px;
+	left: 15px;
 	width: 100%;
+	height: 100%;
 	z-index: 2;
 }
 
@@ -124,9 +124,9 @@ ul {
 	display: inline-block;
 	font-size: 22px;
 	font-weight: 300;
-	left: 0px;
 	letter-spacing: 1px;
 	opacity: 0;
+	left: 0px;
 	width: 70%;
 
 	padding: 0.7rem 0;
@@ -193,6 +193,7 @@ ul {
 .navbar-container.active {
 	width: 210px;
 }
+
 section {
 	margin: 75px 25px;
 	padding: 8% 5%;
@@ -211,6 +212,7 @@ section {
 	letter-spacing: 2.5px;
 	width: auto;
 	height: 50px;
+	padding: 0 15px;
 	position: absolute;
 	transition: left 0.5s;
 }
@@ -221,8 +223,8 @@ section {
 	display: block;
 	position: absolute;
 	top: 0;
-	left: 0;
-	right: 0;
+	left: 0px;
+	right: 0px;
 	bottom: 0;
 	transform: scaleX(0);
 	transform-origin: bottom right;
@@ -500,5 +502,8 @@ iframe {
 	}
 	.navbar-container.active {
 		transform: translateX(0);
+	}
+	section {
+		padding-top: calc(10% + 15px);
 	}
 }
