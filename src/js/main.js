@@ -37,11 +37,21 @@ function adjustMedia() {
 			menuToggle.classList.toggle('active');
 		});
 }
+
+let isMatched = false;
+let isAdjust = false;
+
 const mediaQueryList = window.matchMedia('(max-width: 640px)');
 mediaQueryList.addListener((e) => {
-	if (e.matches) adjustMedia();
+	if (e.matches && !isMatched && !isAdjust) {
+		adjustMedia();
+		isMatched = true;
+	}
 });
 
 setInterval(() => {
-	if (window.innerWidth <= 640) adjustMedia();
+	if (window.innerWidth <= 640 && !isAdjust && !isMatched) {
+		adjustMedia();
+		isAdjust = true;
+	}
 }, 1000);
