@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
 :root {
 	--background-color: #fafafa;
@@ -201,7 +201,6 @@ section {
 	position: relative;
 }
 
-
 /*Title*/
 .title {
 	background: var(--heading-hover-text);
@@ -251,15 +250,20 @@ section {
 	transition: width 0.5s, left 0.5s;
 }
 .menu {
-	align-items: left;
 	cursor: pointer;
-	display: block;
-	left: 5px;
-	padding: 2%;
-	padding: auto;
+
 	position: fixed;
-	width: 32px;
-	height: 32px;
+	top: 0;
+	bottom: 0;
+	left: 5px;
+
+	width: 50px;
+	height: inherit;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	z-index: 10;
 }
 
@@ -417,7 +421,6 @@ section {
 	color: #fff;
 }
 
-
 /*Theme Switch*/
 .theme-toggle,
 .checkbox,
@@ -484,8 +487,11 @@ iframe {
 	}
 }
 
-
 @media (max-width: 640px) {
+	h1 {
+		font-size: 1.6rem;
+	}
+
 	.main.active {
 		left: 0;
 		width: 100%;
@@ -503,6 +509,7 @@ iframe {
 	.navbar-container.active {
 		transform: translateX(0);
 	}
+
 	section {
 		padding-top: calc(10% + 15px);
 	}
