@@ -42,4 +42,6 @@ mediaQueryList.addListener((e) => {
 	if (e.matches) adjustMedia();
 });
 
-if (window.innerWidth <= 640) adjustMedia();
+setInterval(() => {
+	if (window.innerWidth <= 640) adjustMedia();
+}, 1000);
