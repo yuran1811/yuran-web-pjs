@@ -8,36 +8,38 @@ menuToggle.addEventListener('click', () => {
 	labelToggle.classList.toggle('active');
 	menuToggle.classList.toggle('active');
 
-	let linkList = document.querySelector('.links').getElementsByClassName('lk');
-	for (var i = 0; i < linkList.length; i++) {
-		linkList[i].addEventListener('click', function () {
-			let current = document.getElementsByClassName('liactive');
-			current[0].className = current[0].className.replace(' liactive', '');
-			this.className += ' liactive';
+	let linkList = document.querySelectorAll('.links .lk');
+	console.log(typeof linkList);
+	for (var link of linkList)
+		link.addEventListener('click', (e) => {
+			let last = document.querySelector('.liactive');
+			last.className = last.className.replace(' liactive', '');
+			e.path[1].className += ' liactive';
 		});
-	}
 });
 
 const ToggleBtn = document.querySelector('#toggle-btn');
-ToggleBtn.addEventListener('change', (e) => {
+ToggleBtn.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
 });
 
+function adjustMedia() {
+	let linkList = document.querySelectorAll('.links .lk');
+	for (var link of linkList)
+		link.addEventListener('click', (e) => {
+			let last = document.querySelector('.liactive');
+			last.className = last.className.replace(' liactive', '');
+			e.path[1].className += ' liactive';
 
-var mediaQueryList = window.matchMedia('(max-width: 640px)');
+			navbarContainer.classList.toggle('active');
+			mainContainer.classList.toggle('active');
+			labelToggle.classList.toggle('active');
+			menuToggle.classList.toggle('active');
+		});
+}
+const mediaQueryList = window.matchMedia('(max-width: 640px)');
 mediaQueryList.addListener((e) => {
-	if (e.matches) {
-		let linkList = document.querySelector('.links').getElementsByClassName('lk');
-		for (var i = 0; i < linkList.length; i++) {
-			linkList[i].addEventListener('click', function () {
-				let current = document.getElementsByClassName('liactive');
-				current[0].className = current[0].className.replace(' liactive', '');
-				this.className += ' liactive';
-				navbarContainer.classList.toggle('active');
-				mainContainer.classList.toggle('active');
-				labelToggle.classList.toggle('active');
-				menuToggle.classList.toggle('active');
-			});
-		}
-	}
-})
+	if (e.matches) adjustMedia();
+});
+
+if (window.innerWidth <= 640) adjustMedia();
