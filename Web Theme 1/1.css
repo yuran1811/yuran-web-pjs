@@ -473,13 +473,13 @@ iframe {
 }
 
 /*Social Panel*/
-#ic {
+.ic {
 	margin: 0 5px;
 	max-width: 45px;
 	max-height: 45px;
 	border-radius: 100px;
 }
-#ic:hover {
+.ic:hover {
 	transform: scale(1.3);
 }
 
