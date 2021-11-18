@@ -1,24 +1,62 @@
-const menuToggle = document.querySelector(".menu");
-const mainContainer = document.querySelector(".main");
-const labelToggle = document.querySelector('.label');
-const navbarContainer = document.querySelector(".navbar-container");
-menuToggle.addEventListener("click", () => {
-	navbarContainer.classList.toggle("active");
-	mainContainer.classList.toggle("active");
-	labelToggle.classList.toggle("active");
-	menuToggle.classList.toggle("active");
-})
+const socialPanelConatainer = document.querySelector('.social-panel-container');
+const floatBtn = document.querySelector('.floating-btn');
+const closeBtn = document.querySelector('.close-btn');
 
-const SocialPanel_container = document.querySelector('.social-panel-container');
-const FloatingBtn = document.querySelector('.floating-btn');
-const ToggleBtn = document.querySelector('#toggle-btn');
-const CloseBtn = document.querySelector('.close-btn');
+floatBtn.addEventListener('mouseover', (e) => {
+	socialPanelConatainer.classList.toggle('visible');
+});
+floatBtn.addEventListener('mouseout', (e) => {
+	socialPanelConatainer.classList.remove('visible');
+});
 
-ToggleBtn.addEventListener('change', (e) => {document.body.classList.toggle('dark');});
+socialPanelConatainer.addEventListener('mouseover', (e) => {
+	socialPanelConatainer.classList.toggle('visible');
+});
+socialPanelConatainer.addEventListener('mouseout', (e) => {
+	socialPanelConatainer.classList.remove('visible');
+});
 
-FloatingBtn.addEventListener('mouseover', (e) => {SocialPanel_container.classList.toggle('visible');});
-FloatingBtn.addEventListener('mouseout', (e) => {SocialPanel_container.classList.remove('visible');});
-SocialPanel_container.addEventListener('mouseover', (e) => {SocialPanel_container.classList.toggle('visible');});
-SocialPanel_container.addEventListener('mouseout', (e) => {SocialPanel_container.classList.remove('visible')});
+closeBtn.addEventListener('click', (e) => {
+	socialPanelConatainer.classList.remove('visible');
+});
 
-CloseBtn.addEventListener('click', (e) => {SocialPanel_container.classList.remove('visible')});
+const menuToggle = document.querySelector('.menu');
+const mainContainer = document.querySelector('.main');
+const navbarContainer = document.querySelector('.navbar-container');
+
+(() => {
+	const linkList = document.querySelectorAll('.links .lk');
+	for (let link of linkList)
+		link.addEventListener('click', (e) => {
+			let last = document.querySelector('.liactive');
+			last.className = last.className.replace(' liactive', '');
+			e.path[1].className += ' liactive';
+		});
+})();
+
+function toggleActive() {
+	(() => {
+		navbarContainer.classList.toggle('active');
+		mainContainer.classList.toggle('active');
+		menuToggle.classList.toggle('active');
+	})();
+}
+
+document.querySelector('#toggle-btn').addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+});
+
+menuToggle.addEventListener('click', toggleActive);
+
+setInterval(() => {
+	if (window.innerWidth <= 640) {
+		if (menuToggle.classList.contains('active'))
+			document
+				.querySelector('.links')
+				.addEventListener('click', toggleActive);
+		else
+			document
+				.querySelector('.links')
+				.removeEventListener('click', toggleActive);
+	}
+}, 500);
