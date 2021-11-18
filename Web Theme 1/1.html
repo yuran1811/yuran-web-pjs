@@ -1,113 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-	<link rel="icon" href="https://cdn1.iconfinder.com/data/icons/photography-filled-line-2/32/Night_Mode_Moon_Dark_Effect-512.png"/>
-	<link rel="stylesheet" href="./1.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<title>Web Theme 1</title>
-</head>
-
-<body>
-	<div class="container">
-		<!-- Navbar -->
-		<div class="navbar-container">
-			<div class="links">
-				<ul>
-					<li class="active"><a href="#banner" style="--i: 0.10s">Home</a></li>
-					<li><a href="#about-me" style="--i: 0.20s">About Me</a></li>
-					<li><a href="#activities" style="--i: 0.30s">Activities</a></li>
-					<li><a href="#achievement" style="--i: 0.40s">Achievement</a></li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- Main -->
-		<div class="main">
-			<!-- Top -->
-			<div class="top-bar">
-				<div class="menu">
-					<div class="bar"></div>
-					<!-- <i id="bar" class="fas fa-bars fa-2x"></i> -->
-				</div>
-				<div class="title"><h1> <a href="#banner"> Web Theme 1 </a></h1></div>
-				<div class="theme-toggle">
-					<input type="checkbox" class="checkbox" id="toggle-btn"/>
-					<label class="label" for="toggle-btn">
-						<img class="sun" src="https://cdn.iconscout.com/icon/free/png-256/moon-1716354-1461199.png">
-						<img class="moon" src="https://image.flaticon.com/icons/png/512/169/169367.png">
-						<div class="ball"></div>
-					</label>
-				</div>
-			</div>
-
-			<!-- Content -->
-			<section class="banner" id="banner">
-				<div class="content">
-					<div class="imgBox">
-						<img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.6435-9/121107552_978084246037100_2302379323063758212_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=_7KUNUQcesYAX9qJjh1&_nc_ht=scontent.fsgn5-6.fna&oh=ea10b1b24655ef27bf8809ec145583d2&oe=61982A15">
-					</div>
-					<h3 style="font-size: 1.7em; text-transform: uppercase; letter-spacing: 5.5px">Yuran Legends</h3>
-					<p>I'm a Newbie Front End Web Developer 👨‍💻</p>
-				</div>
-			</section>
-
-			<section class="about-me adjust" id="about-me">
-				<div class="heading-title"><h2>About Me</h2></div>
-				<div class="content">
-					<div class="textBox">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium error totam animi tempore aut esse quidem necessitatibus excepturi tenetur reiciendis architecto voluptatem veritatis reprehenderit labore iure, a magni, voluptas. Nulla.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem aliquid, veritatis. Mollitia facilis, autem praesentium iusto inventore ratione vitae, cupiditate pariatur iure, ducimus reiciendis adipisci perferendis nesciunt laudantium, possimus vel.
-						Lorem ipsum dolor sit amet consectetur adipisicing, elit. Accusamus, a quod nihil repudiandae, aspernatur explicabo ut. Amet laudantium molestiae voluptatum voluptatem praesentium mollitia, laborum facilis, ipsam deleniti quis libero esse!</p>
-					</div>
-				</div>
-			</section>
-
-			<section class="activities adjust" id="activities">
-				<div class="heading-title"><h2>Activities</h2></div>
-				<div class="content">
-					<div class="textBox">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore modi quidem ex eaque? Ducimus cumque iste, nostrum quisquam cum voluptatum pariatur quo consequuntur laboriosam, sint ea dolorum ipsa vel omnis!
-						Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Ullam explicabo veniam delectus dicta eum tenetur libero cumque quis cum animi. Rem harum ducimus, veniam laboriosam accusamus dolores similique voluptatum dolore.
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. A temporibus illum labore voluptas corporis tempore sunt consequatur, aliquam hic nobis velit laboriosam ad facere, recusandae ullam, error itaque laudantium totam.</p>
-					</div>
-				</div>
-			</section>
-
-			<section class="achievement adjust" id="achievement">
-				<div class="heading-title"><h2>Achievement</h2></div>
-				<div class="content">
-					<div class="textBox">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorum, saepe unde numquam laborum corrupti ut ipsam, nemo error tenetur eius placeat dolorem ipsum quae quam cumque incidunt at neque.
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit, non. Laboriosam perspiciatis quod molestiae dolore officia sed, ipsam! Illum excepturi ex, temporibus quos soluta suscipit laudantium quaerat beatae distinctio!
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, corporis rem, sequi iusto deleniti unde, maiores molestias aspernatur doloremque, ex repellat non esse assumenda expedita placeat eum distinctio possimus fugit.</p>
-					</div>
-				</div>
-			</section>
-
-			<!-- Social Panel -->
-			<button class="floating-btn">Contact me</button>
-			<div class="social-panel-container">
-				<div class="social-panel">
-					<p>Created by <a href="https://github.com/yuran1811"><i style="letter-spacing: 1.5px;">Yuran</i></a></p>
-
-					<button class="close-btn"></button>
-
-					<h4 style="letter-spacing: 1.5px;">Visit me</h4>
-
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="icon"
+			href="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.6435-9/121107552_978084246037100_2302379323063758212_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=_7KUNUQcesYAX9qJjh1&_nc_ht=scontent.fsgn5-6.fna&oh=ea10b1b24655ef27bf8809ec145583d2&oe=61982A15"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="1.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<title>Web Theme 1</title>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Navbar -->
+			<div class="navbar-container">
+				<div class="links">
 					<ul>
-						<li><a target="_blank" href="https://www.facebook.com/YuranLegends/"><img id="ic" src="https://cdn-icons-png.flaticon.com/512/145/145802.png"></a></li>
-						<li><a target="_blank" href="https://instagram.com/_yuranlegends_"><img id="ic" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a></li>
-						<li><a target="_blank" href="https://www.youtube.com/channel/UCLXNBb-jZRS_3o_itGGrGRA"><img id="ic" src="https://cdn-icons-png.flaticon.com/512/187/187210.png"></a></li>
-						<li><a target="_blank" href="https://sites.google.com/view/yuranblog/home"><img id="ic" src="https://cdn-icons-png.flaticon.com/512/3959/3959542.png"></a></li>
+						<li class="lk liactive">
+							<a href="#banner" style="--i: 0.1s">Home</a>
+						</li>
+						<li class="lk">
+							<a href="#app-drawer" style="--i: 0.2s"
+								>App Drawer</a
+							>
+						</li>
+						<li class="lk">
+							<a href="#web-theme" style="--i: 0.3s">Web Theme</a>
+						</li>
+						<li class="lk">
+							<a href="#others" style="--i: 0.4s">Others</a>
+						</li>
 					</ul>
 				</div>
 			</div>
-		</div>
-	</div>
-</body>
 
-<script src="./1.js"></script>
+			<!-- Main -->
+			<div class="main">
+				<!-- Top Bar -->
+				<div class="top-bar">
+					<div class="menu"><div class="bar"></div></div>
+					<div class="title">
+						<h1><a href="#banner">Web Theme 1</a></h1>
+					</div>
+					<div class="theme-toggle">
+						<input
+							type="checkbox"
+							class="checkbox"
+							id="toggle-btn"
+						/>
+						<label class="label" for="toggle-btn">
+							<span class="moon"
+								><i class="fas fa-moon"></i
+							></span>
+							<span class="sun"><i class="fas fa-sun"></i></span>
+							<span class="ball"></span>
+						</label>
+					</div>
+				</div>
+
+				<!-- Content -->
+				<section class="banner" id="banner">
+					<h2 style="display: none">Bio</h2>
+					<div class="content">
+						<div class="imgBox">
+							<div class="imgHover">
+								<p class="imgHoverText">
+									I'm a Front-end <br />
+									Web Developer
+									<br />
+									<i
+										class="bx bxs-yin-yang bx-spin bx-lg"
+									></i>
+								</p>
+							</div>
+							<img
+								alt="Yuran Legends Avatar"
+								src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.6435-9/121107552_978084246037100_2302379323063758212_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=_7KUNUQcesYAX9qJjh1&_nc_ht=scontent.fsgn5-6.fna&oh=ea10b1b24655ef27bf8809ec145583d2&oe=61982A15"
+							/>
+						</div>
+						<div
+							style="
+								text-decoration: none;
+								font-size: 2rem;
+								text-transform: uppercase;
+								letter-spacing: 5.5px;
+								font-weight: bold;
+							"
+						>
+							Yuran Legends
+						</div>
+						<ul class="socialMedia">
+							<li>
+								<a
+									class="fb"
+									target="_blank"
+									href="https://www.facebook.com/YuranLegends/"
+									><i
+										class="fa-2x fab fa-facebook"
+										aria-hidden="true"
+									></i
+								></a>
+							</li>
+							<li>
+								<a
+									class="insta"
+									target="_blank"
+									href="https://instagram.com/_yuranlegends_"
+									><i
+										class="fa-2x fab fa-instagram"
+										aria-hidden="true"
+									></i
+								></a>
+							</li>
+							<li>
+								<a
+									class="yt"
+									target="_blank"
+									href="https://www.youtube.com/channel/UCLXNBb-jZRS_3o_itGGrGRA"
+									><i
+										class="fa-2x fab fa-youtube"
+										aria-hidden="true"
+									></i
+								></a>
+							</li>
+							<li>
+								<a
+									class="gh"
+									target="_blank"
+									href="https://github.com/yuran1811"
+									><i
+										class="fa-2x fab fa-github"
+										aria-hidden="true"
+									></i
+								></a>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="app-drawer adjust" id="app-drawer">
+					<h2 class="heading-title">App Drawer</h2>
+					<div class="content">
+						<div class="textBox">
+							<p>
+								With
+								<a
+									class="linking"
+									target="_blank"
+									href="https://github.com/yuran1811/App-Drawer"
+									>App Drawer</a
+								>, you can do something fun with it like:
+							</p>
+							<ul>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Change the
+										pointer size
+									</p>
+								</li>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Change the
+										color of the pointer
+									</p>
+								</li>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Reset the
+										workspace
+									</p>
+								</li>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Draw by Pen
+									</p>
+								</li>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Draw Lines
+									</p>
+								</li>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Dark /
+										Light theme Toggle
+									</p>
+								</li>
+								<li>
+									<p class="p-indent">
+										<i class="fas fa-check"></i> Resize the
+										workspace
+									</p>
+								</li>
+							</ul>
+							<p>
+								Source Code on
+								<a
+									class="linking"
+									target="_blank"
+									href="https://github.com/yuran1811/App-Drawer"
+									>Github</a
+								>
+								and
+								<a
+									class="linking"
+									target="iframe_app-drawer"
+									href="https://yuran1811.github.io/App-Drawer/"
+									onclick="document.getElementById('iframe_app-drawer').style.display = 'none';"
+									ondblclick="document.getElementById('iframe_app-drawer').style.display = 'block';"
+									>Demo Here</a
+								>
+								(double-click to view and single-click to hide)
+								<br />
+								(Please disable dark mode of this site if the
+								"Demo" doesn't display well!)
+							</p>
+							<iframe
+								id="iframe_app-drawer"
+								name="iframe_app-drawer"
+								style="height: 620px; width: 100%"
+								title="App Drawer"
+							></iframe>
+						</div>
+					</div>
+				</section>
+
+				<section class="web-theme adjust" id="web-theme">
+					<h2 class="heading-title">Web Theme</h2>
+					<div class="content">
+						<div class="textBox">
+							<p>All my Web Themes are here!!!</p>
+							<ul>
+								<li>
+									<p class="p-indent">
+										<a class="linking" href="#"
+											><i class="fas fa-check"></i> Theme
+											1</a
+										>
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section class="others adjust" id="others">
+					<h2 class="heading-title">Others</h2>
+					<div class="content">
+						<div class="textBox">
+							<!-- Detect Cheating -->
+							<h3>Detect Cheating</h3>
+							<p class="p-indent">
+								"Detect Cheating" is used to check if someone
+								leaves the page when any test is available
+							</p>
+							<p class="p-indent">This site can:</p>
+							<ul>
+								<li>
+									<p class="p-indent2">
+										<i class="fas fa-check"></i> Display the
+										number of times you're away
+									</p>
+								</li>
+								<li>
+									<p class="p-indent2">
+										<i class="fas fa-check"></i> Display the
+										time you're away
+									</p>
+								</li>
+								<li>
+									<p class="p-indent2">
+										<i class="fas fa-check"></i> The site's
+										title will also change when you get away
+									</p>
+								</li>
+								<li>
+									<p class="p-indent2">
+										<i class="fas fa-check"></i> Toggle Dark
+										Mode when the title is clicked
+									</p>
+								</li>
+							</ul>
+							<p class="p-indent">
+								Source Code on
+								<a
+									class="linking"
+									target="_blank"
+									href="https://github.com/yuran1811/detect-cheating-online-tests"
+									>Github</a
+								>
+								and
+								<a
+									class="linking"
+									target="iframe_detect-cheating"
+									href="https://yuran1811.github.io/detect-cheating-online-tests"
+									onclick="document.getElementById('iframe_detect-cheating').style.display = 'none';"
+									ondblclick="document.getElementById('iframe_detect-cheating').style.display = 'block';"
+									>Demo Here</a
+								>
+								(double-click to view and single-click to hide)
+								<br />
+								(Please disable dark mode of this site if the
+								"Demo" doesn't display well!)
+							</p>
+							<iframe
+								id="iframe_detect-cheating"
+								name="iframe_detect-cheating"
+								style="height: 500px; width: 100%"
+								title="Detect Cheating"
+							></iframe>
+
+							<!-- Project: Dintiz -->
+							<br />
+							<h3>Project: Dinitz</h3>
+							<p class="p-indent">
+								This repository is created to stored the image
+								source and the test source of the project.
+							</p>
+							<p class="p-indent">
+								Visit the site at
+								<a
+									class="linking"
+									target="_blank"
+									href="https://sites.google.com/view/project-dinitz"
+									>Project: Dinitz</a
+								>
+								and the source on
+								<a
+									class="linking"
+									target="_blank"
+									href="https://github.com/yuran1811/project-dinitz"
+									>Github</a
+								>
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<button class="floating-btn">Contact me</button>
+				<div class="social-panel-container">
+					<div class="social-panel">
+						<p>
+							Created by
+							<a href="https://github.com/yuran1811"
+								><i style="letter-spacing: 1.5px">Yuran</i></a
+							>
+						</p>
+
+						<button class="close-btn"></button>
+
+						<h4 style="letter-spacing: 1.5px">Visit me</h4>
+
+						<ul>
+							<li>
+								<a
+									target="_blank"
+									href="https://www.facebook.com/YuranLegends/"
+									><img
+										id="ic"
+										src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+								/></a>
+							</li>
+							<li>
+								<a
+									target="_blank"
+									href="https://instagram.com/_yuranlegends_"
+									><img
+										id="ic"
+										src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+								/></a>
+							</li>
+							<li>
+								<a
+									target="_blank"
+									href="https://www.youtube.com/channel/UCLXNBb-jZRS_3o_itGGrGRA"
+									><img
+										id="ic"
+										src="https://cdn-icons-png.flaticon.com/512/187/187210.png"
+								/></a>
+							</li>
+							<li>
+								<a
+									target="_blank"
+									href="https://sites.google.com/view/yuranblog/home"
+									><img
+										id="ic"
+										src="https://cdn-icons-png.flaticon.com/512/3959/3959542.png"
+								/></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="1.js"></script>
+	</body>
 </html>
