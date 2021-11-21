@@ -1,0 +1,79 @@
+:root {
+	--background: white;
+	--color: black;
+}
+
+body.dark {
+	--background: black;
+	--color: white;
+}
+
+* {
+	font-family: 'Patrick Hand', cursive;
+}
+
+.container {
+	text-align: center;
+}
+
+.title {
+	font-size: 5rem;
+}
+
+.main {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	margin: 20px auto;
+	width: 306px;
+}
+
+.cell {
+	box-shadow: 0 0 0 1px var(--color);
+	border: 2px solid var(--color);
+	line-height: 100px;
+	font-size: 5.7rem;
+	cursor: pointer;
+	height: 100px;
+	width: 100px;
+}
+
+.restart {
+	position: relative;
+	display: inline-block;
+	border: 0px solid var(--color);
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 5px;
+	transition: border-width 0.3s ease 0.15s;
+}
+
+.restart::after {
+	content: ' ';
+	background-color: var(--color);
+	position: absolute;
+	height: 5px;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	transform: scaleX(1);
+	transition: transform 0.3s ease;
+}
+
+.restart:hover {
+	border-width: 5px;
+}
+
+.restart:hover .redo {
+	animation: spin 1s infinite ease 0.3s;
+}
+.restart:hover::after {
+	transform: scaleX(0);
+}
+
+@keyframes spin {
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
