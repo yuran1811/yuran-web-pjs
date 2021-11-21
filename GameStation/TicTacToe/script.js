@@ -84,3 +84,15 @@ function handleRestartGame() {
 
 $$('.cell').forEach((cell) => cell.addEventListener('click', handleCellClick));
 $('.restart').addEventListener('click', handleRestartGame);
+
+const listTheme = ['dark', 'spring', 'noel'];
+$$('.theme-ico').forEach((item) => {
+	item.addEventListener('click', (e) => {
+		listTheme.map((themeItem) => {
+			$('body').classList.remove(`${themeItem}-theme`);
+			$(`#${themeItem}`).classList.remove('active');
+		});
+		$('body').classList.add(`${e.target.getAttribute('id')}-theme`);
+		$(`#${e.target.getAttribute('id')}`).classList.add('active');
+	});
+});
