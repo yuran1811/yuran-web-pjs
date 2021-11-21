@@ -1,15 +1,39 @@
 :root {
 	--background: white;
 	--color: black;
-}
 
-body.dark {
-	--background: black;
-	--color: white;
+	--dark-background: black;
+	--dark-color: white;
+
+	--spring-background: rgba(238, 117, 173, 0.842);
+	--spring-color: rgb(143, 22, 38);
+
+	--noel-background: rgb(240, 35, 35);
+	--noel-color: rgb(117, 241, 117);
 }
 
 * {
 	font-family: 'Patrick Hand', cursive;
+}
+
+::selection {
+	color: var(--background);
+	background-color: var(--color);
+}
+
+body.dark-theme {
+	--background: var(--dark-background);
+	--color: var(--dark-color);
+}
+
+body.spring-theme {
+	--background: var(--spring-background);
+	--color: var(--spring-color);
+}
+
+body.noel-theme {
+	--background: rgb(211, 11, 11);
+	--color: rgb(30, 192, 30);
 }
 
 .container {
@@ -17,7 +41,48 @@ body.dark {
 }
 
 .title {
-	font-size: 5rem;
+	font-size: 4.5rem;
+}
+
+.theme-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.theme-ico {
+	border: 2px solid var(--color);
+	font-size: 1.5rem;
+	padding: 2px 5px;
+	cursor: pointer;
+	margin: 0 10px;
+}
+
+#dark:hover {
+	background-color: var(--dark-background);
+	color: var(--dark-color);
+}
+#dark.active:hover {
+	background-color: var(--dark-color);
+	color: var(--dark-background);
+}
+
+#noel:hover {
+	background-color: var(--noel-background);
+	color: var(--noel-color);
+}
+#noel.active:hover {
+	background-color: var(--noel-color);
+	color: var(--noel-background);
+}
+
+#spring:hover {
+	background-color: var(--spring-background);
+	color: var(--spring-color);
+}
+#spring.active:hover {
+	background-color: var(--spring-color);
+	color: var(--spring-background);
 }
 
 .main {
