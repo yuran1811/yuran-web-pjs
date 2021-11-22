@@ -87,7 +87,6 @@ p {
 
 /*Nav Bar*/
 .navbar-container {
-	border-right: 1.25px solid var(--border-color);
 	background: var(--background-color);
 
 	position: fixed;
@@ -101,6 +100,7 @@ p {
 }
 .navbar-container.active {
 	width: 230px;
+	border-right: 1.25px solid var(--border-color);
 }
 
 ul {
@@ -182,8 +182,8 @@ ul {
 	transition: width 0.5s, left 0.5s;
 }
 .main.active {
-	left: 210px;
-	width: calc(100% - 210px);
+	left: 230px;
+	width: calc(100% - 230px);
 }
 
 section {
