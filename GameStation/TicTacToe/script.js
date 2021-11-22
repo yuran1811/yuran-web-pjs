@@ -85,7 +85,16 @@ function handleRestartGame() {
 $$('.cell').forEach((cell) => cell.addEventListener('click', handleCellClick));
 $('.restart').addEventListener('click', handleRestartGame);
 
-const listTheme = ['dark', 'spring', 'noel'];
+const listTheme = [
+	'light',
+	'dark',
+	'spring',
+	'summer',
+	'autumn',
+	'winter',
+	'noel',
+	'yin-yang',
+];
 $$('.theme-ico').forEach((item) => {
 	item.addEventListener('click', (e) => {
 		listTheme.map((themeItem) => {
