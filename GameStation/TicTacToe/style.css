@@ -8,8 +8,20 @@
 	--spring-background: rgba(255, 174, 212, 0.781);
 	--spring-color: rgb(143, 22, 38);
 
+	--summer-background: rgba(255, 235, 52, 0.849);
+	--summer-color: rgb(185, 105, 0);
+
+	--autumn-background: rgb(227, 219, 154);
+	--autumn-color: rgb(242, 149, 65);
+
+	--winter-background: rgba(202, 243, 255, 0.815);
+	--winter-color: rgb(22, 115, 143);
+
 	--noel-background: rgb(145, 0, 0);
 	--noel-color: rgb(108, 212, 171);
+
+	--yin-yang-background: black;
+	--yin-yang-color: rgb(160, 160, 160);
 }
 
 * {
@@ -24,6 +36,8 @@
 body {
 	background-color: var(--background);
 	color: var(--color);
+	margin: 0;
+	overflow: hidden;
 }
 
 body.dark-theme {
@@ -36,9 +50,29 @@ body.spring-theme {
 	--color: var(--spring-color);
 }
 
+body.summer-theme {
+	--background: var(--summer-background);
+	--color: var(--summer-color);
+}
+
+body.autumn-theme {
+	--background: var(--autumn-background);
+	--color: var(--autumn-color);
+}
+
+body.winter-theme {
+	--background: var(--winter-background);
+	--color: var(--winter-color);
+}
+
 body.noel-theme {
 	--background: var(--noel-background);
 	--color: var(--noel-color);
+}
+
+body.yin-yang-theme {
+	--background: var(--yin-yang-background);
+	--color: var(--yin-yang-color);
 }
 
 .container {
@@ -46,11 +80,16 @@ body.noel-theme {
 }
 
 .title {
-	font-size: 4.5rem;
+	font-size: 4rem;
 }
 
 .theme-list {
+	position: relative;
+	margin: auto;
+	max-width: 500px;
+	min-width: 200px;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 }
@@ -59,9 +98,9 @@ body.noel-theme {
 	position: relative;
 	border: 2px solid;
 	font-size: 1.5rem;
-	padding: 2px 5px 3px;
+	padding: 1px 5px 3px;
 	cursor: pointer;
-	margin: 0 10px;
+	margin: 7px 10px;
 }
 
 .theme-ico::after {
@@ -78,6 +117,10 @@ body.noel-theme {
 	transform: scaleX(1);
 }
 
+#light:hover {
+	background-color: var(--background);
+	color: var(--color);
+}
 #light:hover::after {
 	background-color: var(--color);
 }
@@ -121,6 +164,54 @@ body.noel-theme {
 	background-color: var(--spring-background);
 }
 
+#summer:hover {
+	background-color: var(--summer-background);
+	border-color: var(--summer-background);
+	color: var(--summer-color);
+}
+#summer:hover::after {
+	background-color: var(--summer-color);
+}
+#summer.active:hover {
+	background-color: var(--summer-color);
+	color: var(--summer-background);
+}
+#summer.active:hover::after {
+	background-color: var(--summer-background);
+}
+
+#autumn:hover {
+	background-color: var(--autumn-background);
+	border-color: var(--autumn-background);
+	color: var(--autumn-color);
+}
+#autumn:hover::after {
+	background-color: var(--autumn-color);
+}
+#autumn.active:hover {
+	background-color: var(--autumn-color);
+	color: var(--autumn-background);
+}
+#autumn.active:hover::after {
+	background-color: var(--autumn-background);
+}
+
+#winter:hover {
+	background-color: var(--winter-background);
+	border-color: var(--winter-background);
+	color: var(--winter-color);
+}
+#winter:hover::after {
+	background-color: var(--winter-color);
+}
+#winter.active:hover {
+	background-color: var(--winter-color);
+	color: var(--winter-background);
+}
+#winter.active:hover::after {
+	background-color: var(--winter-background);
+}
+
 #noel:hover {
 	background-color: var(--noel-background);
 	border-color: var(--noel-background);
@@ -137,10 +228,26 @@ body.noel-theme {
 	background-color: var(--noel-background);
 }
 
+#yin-yang:hover {
+	background-color: var(--yin-yang-background);
+	border-color: var(--yin-yang-background);
+	color: var(--yin-yang-color);
+}
+#yin-yang:hover::after {
+	background-color: var(--yin-yang-color);
+}
+#yin-yang.active:hover {
+	background-color: var(--yin-yang-color);
+	color: var(--yin-yang-background);
+}
+#yin-yang.active:hover::after {
+	background-color: var(--yin-yang-background);
+}
+
 .main {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
-	margin: 20px auto;
+	margin: 15px auto;
 	width: 306px;
 }
 
@@ -152,6 +259,10 @@ body.noel-theme {
 	cursor: pointer;
 	height: 100px;
 	width: 100px;
+}
+
+.turn {
+	margin: 4px auto 2px;
 }
 
 .restart {
