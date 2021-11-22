@@ -100,7 +100,7 @@ p {
 	transform-style: preserve-3d;
 }
 .navbar-container.active {
-	width: 210px;
+	width: 230px;
 }
 
 ul {
@@ -497,7 +497,7 @@ iframe {
 	}
 
 	.navbar-container {
-		width: 210px;
+		width: 230px;
 		transform: translateX(-100%);
 		z-index: 50;
 		transition: all 0.25s ease;
