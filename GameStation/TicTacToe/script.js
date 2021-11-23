@@ -1,3 +1,5 @@
+'use strict';
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -10,7 +12,15 @@ const winLog = () => `${currentPlayer} has won!`;
 const drawLog = () => `Game ended in a draw!`;
 
 const statusDisplay = $('.turn');
-statusDisplay.innerHTML = playerTurn();
+
+$('.restart').addEventListener('click', () => {
+	$('.restart').innerHTML = '<i class="fas fa-redo redo"></i> Restart';
+	statusDisplay.innerHTML = playerTurn();
+	$$('.cell').forEach((cell) =>
+		cell.addEventListener('click', handleCellClick)
+	);
+});
+$('.restart').addEventListener('click', handleRestartGame);
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
 	gameState[clickedCellIndex] = currentPlayer;
@@ -82,9 +92,7 @@ function handleRestartGame() {
 	$$('.cell').forEach((cell) => (cell.innerHTML = ''));
 }
 
-$$('.cell').forEach((cell) => cell.addEventListener('click', handleCellClick));
-$('.restart').addEventListener('click', handleRestartGame);
-
+// Theme toggle
 const listTheme = [
 	'light',
 	'dark',
