@@ -7,6 +7,7 @@
 #### Tools
 
 -   [x] [**App Drawer (Beta Version)**](AppDrawer) , Visit the official Repo [**Here**](https://github.com/yuran1811/App-Drawer)
+-   [x] [**Music Player**](https://github.com/yuran1811/Music-Player), Demo [**Here**](https://yuran1811.github.io/Music-Player/)
 
 #### Web Theme
 
