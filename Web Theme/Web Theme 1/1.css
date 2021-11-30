@@ -87,7 +87,6 @@ p {
 
 /*Nav Bar*/
 .navbar-container {
-	border-right: 1.25px solid var(--border-color);
 	background: var(--background-color);
 
 	position: fixed;
@@ -100,7 +99,8 @@ p {
 	transform-style: preserve-3d;
 }
 .navbar-container.active {
-	width: 210px;
+	width: 230px;
+	border-right: 1.25px solid var(--border-color);
 }
 
 ul {
@@ -182,15 +182,15 @@ ul {
 	transition: width 0.5s, left 0.5s;
 }
 .main.active {
-	left: 210px;
-	width: calc(100% - 210px);
+	left: 230px;
+	width: calc(100% - 230px);
 }
 
 section {
 	color: var(--color);
 	position: relative;
-	margin: 75px 25px;
-	padding: 8% 5%;
+	margin: 50px 0;
+	padding: 80px 5% 50px;
 }
 
 /*Title*/
@@ -208,7 +208,6 @@ section {
 	padding: 0 15px;
 	transition: left 0.5s;
 }
-
 .title::before {
 	background: var(--heading-hover);
 	content: ' ';
@@ -223,7 +222,6 @@ section {
 	transform-origin: bottom right;
 	transition: transform 0.3s ease;
 }
-
 .title:hover::before {
 	transform: scaleX(1);
 	transform-origin: bottom left;
@@ -301,9 +299,33 @@ section {
 
 /*Content*/
 .heading-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.heading-title > span {
 	color: var(--heading-title);
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	position: relative;
+	text-align: center;
+
+	width: auto;
+}
+.heading-title > span::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+
+	transform: scale(0);
+	transition: all 0.5s ease;
+
+	height: 5px;
+	background-color: var(--heading-title);
+}
+.heading-title > span:hover::after {
+	transform: scale(1);
 }
 
 /*Banner*/
@@ -401,17 +423,14 @@ section {
 	background-color: var(--fb);
 	color: #fff;
 }
-
 .insta:hover {
 	background-color: var(--insta);
 	color: #fff;
 }
-
 .yt:hover {
 	background-color: var(--yt);
 	color: #fff;
 }
-
 .gh:hover {
 	background-color: var(--gh);
 	color: #fff;
@@ -671,6 +690,45 @@ iframe {
 
 	.navbar-container {
 		width: 210px;
+		transform: translateX(-100%);
+		z-index: 50;
+		transition: all 0.25s ease;
+	}
+	.navbar-container.active {
+		transform: translateX(0);
+	}
+
+	section {
+		padding-top: calc(10% + 15px);
+	}
+}
+
+/*Media Queries*/
+@media (min-width: 1000px) {
+	.banner .imgBox {
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 10px 0;
+		height: calc(25vh + 15vw);
+		width: calc(25vh + 15vw);
+	}
+}
+
+@media (max-width: 640px) {
+	h1 {
+		font-size: 1.6rem;
+	}
+
+	.main.active {
+		left: 0;
+		width: 100%;
+	}
+	.main.active .top-bar {
+		width: 100%;
+	}
+
+	.navbar-container {
+		width: 230px;
 		transform: translateX(-100%);
 		z-index: 50;
 		transition: all 0.25s ease;

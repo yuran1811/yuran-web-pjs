@@ -189,8 +189,8 @@ ul {
 section {
 	color: var(--color);
 	position: relative;
-	margin: 75px 25px;
-	padding: 100px 5%;
+	margin: 50px 0;
+	padding: 80px 5% 50px;
 }
 
 /*Title*/
@@ -208,7 +208,6 @@ section {
 	padding: 0 15px;
 	transition: left 0.5s;
 }
-
 .title::before {
 	background: var(--heading-hover);
 	content: ' ';
@@ -223,7 +222,6 @@ section {
 	transform-origin: bottom right;
 	transition: transform 0.3s ease;
 }
-
 .title:hover::before {
 	transform: scaleX(1);
 	transform-origin: bottom left;
@@ -301,9 +299,33 @@ section {
 
 /*Content*/
 .heading-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.heading-title > span {
 	color: var(--heading-title);
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	position: relative;
+	text-align: center;
+
+	width: auto;
+}
+.heading-title > span::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+
+	transform: scale(0);
+	transition: all 0.5s ease;
+
+	height: 5px;
+	background-color: var(--heading-title);
+}
+.heading-title > span:hover::after {
+	transform: scale(1);
 }
 
 /*Banner*/
@@ -401,17 +423,14 @@ section {
 	background-color: var(--fb);
 	color: #fff;
 }
-
 .insta:hover {
 	background-color: var(--insta);
 	color: #fff;
 }
-
 .yt:hover {
 	background-color: var(--yt);
 	color: #fff;
 }
-
 .gh:hover {
 	background-color: var(--gh);
 	color: #fff;
