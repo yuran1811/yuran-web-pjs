@@ -36,3 +36,11 @@ setInterval(() => {
 		else $('.links').removeEventListener('click', toggleActive);
 	}
 }, 500);
+
+(() => {
+	const toTop = $('.to-top');
+	$('.main').onscroll = () => {
+		if ($('.main').scrollTop > 170) toTop.style.display = 'block';
+		else toTop.style.display = 'none';
+	};
+})();

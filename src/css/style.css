@@ -61,6 +61,80 @@ body.dark {
 	--social-panel-p-color: #046585;
 }
 
+/* To Top Btn */
+.to-top {
+	display: none;
+
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	z-index: 10;
+
+	cursor: pointer;
+
+	width: 50px;
+	height: 50px;
+}
+
+.to-top::after,
+.to-top::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+
+	background-color: var(--color);
+	width: 31px;
+	height: 5px;
+	transition: all 0.5s ease;
+}
+.to-top::after {
+	left: 0;
+	transform: rotateZ(-225deg);
+}
+.to-top::before {
+	right: 0;
+	transform: rotateZ(225deg);
+}
+
+.to-top:hover {
+	cursor: default;
+}
+.to-top:hover::after,
+.to-top:hover::before {
+	transform: rotateZ(0);
+}
+
+.to-top a:link,
+.to-top a:visited,
+.to-top a:hover,
+.to-top a:active,
+.to-top a:focus {
+	text-decoration: none;
+	color: var(--color);
+}
+.to-top a {
+	font-size: 1.8rem;
+}
+
+.to-top .to-top__content {
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 15px;
+
+	display: none;
+	transition: all 0.5s ease;
+}
+.to-top:hover .to-top__content {
+	display: block;
+}
+
 /*Heading & P*/
 h1 {
 	font-size: 2rem;
