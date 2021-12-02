@@ -140,23 +140,27 @@ h1 {
 	font-size: 2rem;
 }
 h2 {
-	font-size: 2.1rem;
+	font-size: 2.3rem;
 }
 
 .textBox h3 {
-	font-size: 1.7rem;
-	font-style: italic;
-	text-decoration: underline;
+	font-size: 1.9rem;
+	font-weight: bold;
+	letter-spacing: 3px;
 }
+
 p {
 	font-size: 1.5rem;
 }
 
-.p-indent {
+.p-indent1 {
 	text-indent: 5%;
 }
 .p-indent2 {
 	text-indent: 10%;
+}
+.p-indent3 {
+	text-indent: 15%;
 }
 
 /*Nav Bar*/
@@ -182,15 +186,16 @@ ul {
 }
 
 .links {
-	margin-left: 10px;
-	margin-top: 15px;
+	overflow: hidden scroll;
 	position: relative;
-	top: 50px;
-	left: 15px;
-	width: 100%;
-	height: 100%;
+	top: 55px;
+	left: 10px;
+
 	z-index: 2;
-	overflow: hidden;
+	width: 80%;
+	height: 100%;
+	margin-top: 15px;
+	margin-left: 10px;
 }
 
 .lk a {
@@ -198,18 +203,17 @@ ul {
 	font-size: 22px;
 	font-weight: 300;
 	letter-spacing: 1px;
+	text-align: left;
 	text-decoration: none;
 	text-transform: uppercase;
 
 	display: inline-block;
-	padding: 0.7rem 0;
+	padding: 0.7rem 7px;
 	opacity: 0;
-	width: 70%;
-	left: 0px;
+	width: 100%;
 
 	animation: hide 0.3s forwards ease;
 	transform: translateY(10px);
-	transition: 0.2s;
 	transition: background-color 0.4s;
 }
 
@@ -263,16 +267,16 @@ ul {
 section {
 	color: var(--color);
 	position: relative;
-	margin: 50px 0;
 	padding: 80px 5% 50px;
+	margin: 20px 0;
 }
 
 /*Title*/
 .title {
 	background: var(--heading-hover-text);
-	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
+	background-clip: text;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
 
@@ -382,7 +386,6 @@ section {
 	letter-spacing: 2px;
 	position: relative;
 	text-align: center;
-
 	width: auto;
 }
 .heading-title > span::after {
@@ -403,13 +406,33 @@ section {
 }
 
 /*Banner*/
-.linking {
+.highlight {
 	color: var(--social-panel-p-background);
 	text-decoration: none;
+	position: relative;
+	padding: 5px;
+	z-index: 0;
 }
-.linking:hover {
-	text-decoration: underline;
+
+.highlight::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	z-index: -9;
+	height: 4px;
+	transition: all 0.3s ease;
+	background-color: var(--social-panel-p-color);
+}
+
+.highlight:hover {
 	font-weight: bold;
+}
+
+.highlight:hover::before {
+	height: 100%;
 }
 
 .banner {
@@ -520,7 +543,8 @@ section {
 }
 
 .label {
-	background-color: black;
+	background-color: var(--background-color);
+	border: 1px solid var(--color);
 	border-radius: 50px;
 	cursor: pointer;
 
@@ -536,11 +560,10 @@ section {
 }
 
 .label .ball {
-	background-color: #fff;
+	background-color: var(--color);
 	border-radius: 50%;
 	position: absolute;
 	left: 2px;
-	top: 2px;
 	width: 22px;
 	height: 22px;
 	transform: translateX(0px);
@@ -551,7 +574,7 @@ section {
 	opacity: 0;
 }
 .checkbox:checked + .label .ball {
-	transform: translateX(24px);
+	transform: translateX(22px);
 }
 
 .moon,
@@ -562,6 +585,8 @@ section {
 
 /*Iframe*/
 iframe {
+	border: 1px solid slategrey;
+	border-radius: 10px;
 	display: none;
 }
 
