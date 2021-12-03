@@ -76,9 +76,7 @@ function handleCellClick(clickedCellEvent) {
 	const clickedCell = clickedCellEvent.target;
 	const clickedCellIndex = parseInt(clickedCell.getAttribute('cell-index'));
 
-	if (gameState[clickedCellIndex] !== '' || !isActive) {
-		return;
-	}
+	if (gameState[clickedCellIndex] !== '' || !isActive) return;
 
 	handleCellPlayed(clickedCell, clickedCellIndex);
 	handleResultValidation();
@@ -92,7 +90,6 @@ function handleRestartGame() {
 	$$('.cell').forEach((cell) => (cell.innerHTML = ''));
 }
 
-// Theme toggle
 const listTheme = [
 	'light',
 	'dark',
@@ -105,7 +102,7 @@ const listTheme = [
 ];
 $$('.theme-ico').forEach((item) => {
 	item.addEventListener('click', (e) => {
-		listTheme.map((themeItem) => {
+		listTheme.forEach((themeItem) => {
 			$('body').classList.remove(`${themeItem}-theme`);
 			$(`#${themeItem}`).classList.remove('active');
 		});
