@@ -42,10 +42,10 @@
 
 body {
 	background: var(--background-color);
-	overflow: hidden;
-	height: 100%;
 	word-spacing: 2px;
 	line-height: 50px;
+	overflow: hidden;
+	height: 100%;
 }
 body.dark {
 	--background-color: #1e2025;
@@ -63,14 +63,13 @@ body.dark {
 
 /* To Top Btn */
 .to-top {
+	cursor: pointer;
 	display: none;
 
 	position: fixed;
 	bottom: 60px;
 	right: 60px;
 	z-index: 10;
-
-	cursor: pointer;
 
 	width: 50px;
 	height: 50px;
@@ -79,10 +78,10 @@ body.dark {
 .to-top::after,
 .to-top::before {
 	content: '';
+	background-color: var(--social-panel-p-background);
 	position: absolute;
 	bottom: 0;
 
-	background-color: var(--color);
 	width: 31px;
 	height: 5px;
 	transition: all 0.5s ease;
@@ -109,26 +108,26 @@ body.dark {
 .to-top a:hover,
 .to-top a:active,
 .to-top a:focus {
+	color: var(--social-panel-p-background);
 	text-decoration: none;
-	color: var(--color);
 }
 .to-top a {
 	font-size: 1.8rem;
 }
 
 .to-top .to-top__content {
+	text-align: center;
 	font-size: 1.2rem;
 	font-weight: 700;
-	text-align: center;
 	padding: 0;
 	margin: 0;
 
 	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 15px;
-
 	display: none;
+	bottom: 15px;
+	right: 0;
+	left: 0;
+
 	transition: all 0.5s ease;
 }
 .to-top:hover .to-top__content {
@@ -144,9 +143,9 @@ h2 {
 }
 
 .textBox h3 {
+	letter-spacing: 3px;
 	font-size: 1.9rem;
 	font-weight: bold;
-	letter-spacing: 3px;
 }
 
 p {
@@ -166,6 +165,7 @@ p {
 /*Nav Bar*/
 .navbar-container {
 	background: var(--background-color);
+	overflow: hidden;
 
 	position: fixed;
 	top: 0;
@@ -173,12 +173,11 @@ p {
 	width: 0px;
 	height: 100%;
 
-	overflow: hidden;
 	transform-style: preserve-3d;
 }
 .navbar-container.active {
-	width: 230px;
 	border-right: 1.25px solid var(--border-color);
+	width: 230px;
 }
 
 ul {
@@ -312,6 +311,7 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	position: fixed;
 	width: 100%;
 	height: 60px;
@@ -326,9 +326,10 @@ section {
 	cursor: pointer;
 
 	position: fixed;
-	top: 0;
-	bottom: 0;
+	z-index: 100;
 	left: 5px;
+	bottom: 0;
+	top: 0;
 
 	width: 50px;
 	height: inherit;
@@ -336,8 +337,6 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	z-index: 100;
 }
 
 .bar {
@@ -350,11 +349,11 @@ section {
 }
 .bar::before,
 .bar::after {
+	background-color: var(--color);
 	content: '';
 	position: absolute;
 	width: inherit;
 	height: inherit;
-	background-color: var(--color);
 	transition: 0.5s;
 }
 .bar::before {
@@ -392,14 +391,14 @@ section {
 	content: '';
 	position: absolute;
 	bottom: -5px;
-	left: 0;
 	right: 0;
-
-	transform: scale(0);
-	transition: all 0.5s ease;
+	left: 0;
 
 	height: 5px;
 	background-color: var(--heading-title);
+
+	transform: scale(0);
+	transition: all 0.5s ease;
 }
 .heading-title > span:hover::after {
 	transform: scale(1);
@@ -418,8 +417,8 @@ section {
 	content: '';
 	position: absolute;
 	bottom: 0;
-	left: 0;
 	right: 0;
+	left: 0;
 
 	z-index: -9;
 	height: 4px;
