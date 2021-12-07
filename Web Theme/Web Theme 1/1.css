@@ -29,6 +29,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: 'PT Sans', sans-serif;
+	-webkit-tap-highlight-color: transparent;
 }
 *::selection {
 	color: var(--background-color);

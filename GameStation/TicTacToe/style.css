@@ -26,6 +26,7 @@
 
 * {
 	font-family: 'Patrick Hand', cursive;
+	-webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
