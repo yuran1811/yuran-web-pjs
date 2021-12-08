@@ -25,8 +25,8 @@
 }
 
 * {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 	font-family: 'PT Sans', sans-serif;
 	-webkit-tap-highlight-color: transparent;
@@ -37,8 +37,8 @@
 }
 
 ::-webkit-scrollbar {
-	width: 0px;
 	background: transparent;
+	width: 0;
 }
 
 body {
@@ -120,15 +120,14 @@ body.dark {
 	text-align: center;
 	font-size: 1.2rem;
 	font-weight: 700;
+	display: none;
 	padding: 0;
 	margin: 0;
 
 	position: absolute;
-	display: none;
 	bottom: 15px;
 	right: 0;
 	left: 0;
-
 	transition: all 0.5s ease;
 }
 .to-top:hover .to-top__content {
@@ -171,7 +170,7 @@ p {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 0px;
+	width: 0;
 	height: 100%;
 
 	transform-style: preserve-3d;
@@ -200,9 +199,9 @@ ul {
 
 .lk a {
 	color: var(--color);
-	font-size: 22px;
-	font-weight: 300;
 	letter-spacing: 1px;
+	font-weight: 300;
+	font-size: 22px;
 	text-align: left;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -252,11 +251,11 @@ ul {
 /*Main*/
 .main {
 	background: var(--background-color);
-	overflow: auto;
 	position: absolute;
-	left: 0px;
+	left: 0;
 	width: 100%;
 	height: 100%;
+	overflow: auto;
 	transition: width 0.5s, left 0.5s;
 }
 .main.active {
@@ -271,14 +270,19 @@ section {
 	margin: 20px 0;
 }
 
+.other-item {
+	width: 100%;
+	height: 100%;
+}
+
 /*Title*/
 .title {
 	background: var(--heading-hover-text);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
-	text-transform: uppercase;
 	letter-spacing: 2.5px;
+	text-transform: uppercase;
 
 	position: absolute;
 	width: auto;
@@ -291,10 +295,7 @@ section {
 	content: ' ';
 	display: block;
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 	z-index: -2;
 	transform: scaleX(0);
 	transform-origin: bottom right;
@@ -325,11 +326,10 @@ section {
 
 .menu {
 	cursor: pointer;
-
 	position: fixed;
 	z-index: 100;
-	left: 5px;
 	bottom: 0;
+	left: 5px;
 	top: 0;
 
 	width: 50px;
@@ -394,7 +394,6 @@ section {
 	bottom: -5px;
 	right: 0;
 	left: 0;
-
 	height: 5px;
 	background-color: var(--heading-title);
 
@@ -413,7 +412,6 @@ section {
 	padding: 5px;
 	z-index: 0;
 }
-
 .highlight::before {
 	content: '';
 	position: absolute;
@@ -426,11 +424,9 @@ section {
 	transition: all 0.3s ease;
 	background-color: var(--social-panel-p-color);
 }
-
 .highlight:hover {
 	font-weight: bold;
 }
-
 .highlight:hover::before {
 	height: 100%;
 }
@@ -548,15 +544,14 @@ section {
 	border-radius: 50px;
 	cursor: pointer;
 
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
 	padding: 5px;
 	height: 26px;
 	width: 50px;
-
 	transform: scale(1.5);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .label .ball {
@@ -622,9 +617,5 @@ iframe {
 	}
 	.navbar-container.active {
 		transform: translateX(0);
-	}
-
-	section {
-		padding-top: calc(10% + 15px);
 	}
 }
