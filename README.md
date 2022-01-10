@@ -8,10 +8,11 @@
 
 -   [x] [**App Drawer (Beta Version)**](AppDrawer) , Visit the official Repo [**Here**](https://github.com/yuran1811/App-Drawer)
 -   [x] [**Music Player**](https://github.com/yuran1811/Music-Player), Demo [**Here**](https://yuran1811.github.io/Music-Player/)
+-   [x] [**Codeforces Toolkit**](https://github.com/yuran1811/Codeforces-Toolkit), Demo [**Here**](https://yuran1811.github.io/Codeforces-Toolkit/)
 
 #### Web Theme
 
--   [x] [**Web Theme 1 (Portfolio)**](Web%20Theme%201)
+-   [x] [**Web Theme 1 (Portfolio)**](Web%20Theme/Web%20Theme%201)
 
 #### Game Station
 
@@ -24,4 +25,5 @@
 
 ### Others
 
--   [x] [**CSS Battle Solutions**](https://github.com/yuran1811/CSS-Battle-Solution)
+-   [x] [**CSS Battle Solutions**](https://github.com/yuran1811/CSS-Battle-Solution), Demo [**Here**](https://yuran1811.github.io/CSS-Battle-Solution/)
+-   [x] [**Form Validation Library**](https://github.com/yuran1811/Form-Validator-Library), Demo [**Here**](https://yuran1811.github.io/Form-Validator-Library/)
