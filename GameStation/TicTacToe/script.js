@@ -100,6 +100,24 @@ const listTheme = [
 	'noel',
 	'yin-yang',
 ];
+const listThemeHTML = [
+	'Light',
+	'Dark',
+	'Spring',
+	'Summer',
+	'Autumn',
+	'Winter',
+	'Noel',
+	'YinYang',
+];
+
+$('.theme-list').innerHTML = listThemeHTML
+	.map(
+		(item, index) =>
+			`<div id="${listTheme[index]}" class="theme-ico">${item}</div>`
+	)
+	.join('');
+
 $$('.theme-ico').forEach((item) => {
 	item.addEventListener('click', (e) => {
 		listTheme.forEach((themeItem) => {

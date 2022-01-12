@@ -1,28 +1,27 @@
-:root
-{
-	--heading-hover-text: -webkit-linear-gradient(#2A6748, #18734B);
-	--heading-hover: linear-gradient(35deg, #A3CBEB, #C7E9A8);
+:root {
+	--heading-hover-text: -webkit-linear-gradient(#2a6748, #18734b);
+	--heading-hover: linear-gradient(35deg, #a3cbeb, #c7e9a8);
 	--border-color: black;
 	--color-canvas: white;
 }
 
-* {box-sizing: border-box;}
+* {
+	box-sizing: border-box;
+}
 
 body {
 	display: flex;
 	flex-direction: column;
 }
 
-.dark
-{
-	--heading-hover: linear-gradient(35deg, #497397, #9381A2, #DD88A0);
-	--heading-hover-text: -webkit-linear-gradient(#EAE5C9, #6CC6CB);
+.dark {
+	--heading-hover: linear-gradient(35deg, #497397, #9381a2, #dd88a0);
+	--heading-hover-text: -webkit-linear-gradient(#eae5c9, #6cc6cb);
 	--border-color: white;
-	--color-canvas: #E6E6E6;
+	--color-canvas: #e6e6e6;
 	background-color: #222;
 	color: #e6e6e6;
 }
-
 
 /*Title*/
 .title {
@@ -30,10 +29,10 @@ body {
 	height: 80px;
 }
 
-h1
-{
+h1 {
 	font-family: 'Trebuchet MS', sans-serif;
 	background: var(--heading-hover-text);
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 
@@ -45,38 +44,46 @@ h1
 	right: 38%;
 }
 
-h1::before
-{  
+h1::before {
 	transform: scaleX(0);
 	transform-origin: bottom right;
 }
 
-h1:hover::before
-{
+h1:hover::before {
 	transform: scaleX(1);
 	transform-origin: bottom left;
 }
 
-h1::before
-{
+h1::before {
 	background: var(--heading-hover);
-	content: " ";
+	content: ' ';
 	display: block;
 	inset: 0 0 0 0;
 	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	transition: transform 0.3s ease;
 	z-index: -1;
 }
 
-ul {list-style-type: none;}
-.fa-github {background-color: white; border-radius: 50%; padding: 2px;}
-a:link, a:visited, a:active {color: black;}
-
+ul {
+	list-style-type: none;
+}
+.fa-github {
+	background-color: white;
+	border-radius: 50%;
+	padding: 2px;
+}
+a:link,
+a:visited,
+a:active {
+	color: black;
+}
 
 /*Main*/
-#draw
-{
+#draw {
 	border: 1px solid black;
 	cursor: pointer;
 	background-color: var(--color-canvas);
@@ -88,8 +95,7 @@ a:link, a:visited, a:active {color: black;}
 }
 
 /*Tool Container*/
-.tool-container
-{
+.tool-container {
 	align-content: space-between;
 	align-items: flex-start;
 	display: flex;
@@ -99,7 +105,9 @@ a:link, a:visited, a:active {color: black;}
 	justify-content: flex-start;
 }
 
-label {margin: 0px 5px;}
+label {
+	margin: 0px 5px;
+}
 .tool-btn {
 	border-radius: 50px;
 	margin: 5px 5px;
@@ -107,7 +115,14 @@ label {margin: 0px 5px;}
 	border-style: none;
 	padding: 5px;
 }
-.tool-btn:hover, .btn-active {background-color: #FF7D7D;}
+.tool-btn:hover,
+.btn-active {
+	background-color: #ff7d7d;
+}
 
-#color {border-radius: 0;
-#size {width: 50px;}
+#color {
+	border-radius: 0;
+}
+#size {
+	width: 50px;
+}
