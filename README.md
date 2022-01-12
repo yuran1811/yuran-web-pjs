@@ -22,8 +22,9 @@
 
 -   [x] [**Project: Dinitz**](https://github.com/yuran1811/project-dinitz)
 -   [x] [**Detect Cheating**](https://github.com/yuran1811/detect-cheating-online-tests) , Demo [**Here**](https://yuran1811.github.io/detect-cheating-online-tests)
+-   [x] [**CSS Battle Solutions**](https://github.com/yuran1811/CSS-Battle-Solution), Demo [**Here**](https://yuran1811.github.io/CSS-Battle-Solution/)
 
 ### Others
 
--   [x] [**CSS Battle Solutions**](https://github.com/yuran1811/CSS-Battle-Solution), Demo [**Here**](https://yuran1811.github.io/CSS-Battle-Solution/)
+-   [x] [**VSCode Config**](https://github.com/yuran1811/VSCode-Config)
 -   [x] [**Form Validation Library**](https://github.com/yuran1811/Form-Validator-Library), Demo [**Here**](https://yuran1811.github.io/Form-Validator-Library/)
