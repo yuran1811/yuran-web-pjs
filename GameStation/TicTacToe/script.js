@@ -3,6 +3,15 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+let isStarted = false;
+const renderCell = () => {
+	if (isStarted) return;
+	isStarted = 1;
+	const mainContainer = $('.container .main');
+	for (let i = 0; i < 9; i++)
+		mainContainer.innerHTML += `<div cell-index="${i}" class="cell"></div>`;
+};
+
 let gameState = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let isActive = true;
@@ -14,6 +23,7 @@ const drawLog = () => `Game ended in a draw!`;
 const statusDisplay = $('.turn');
 
 $('.restart').addEventListener('click', () => {
+	renderCell();
 	$('.restart').innerHTML = '<i class="fas fa-redo redo"></i> Restart';
 	statusDisplay.innerHTML = playerTurn();
 	$$('.cell').forEach((cell) =>
