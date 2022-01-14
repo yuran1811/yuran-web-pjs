@@ -4,14 +4,14 @@ const $$ = document.querySelectorAll.bind(document);
 const menuToggle = $('.menu');
 const mainContainer = $('.main');
 const navbarContainer = $('.navbar-container');
+const linkList = $$('.links .lk');
 
 (() => {
-	const linkList = $$('.links .lk');
 	for (let link of linkList)
 		link.addEventListener('click', (e) => {
 			const last = $('.liactive');
 			last.className = last.className.replace(' liactive', '');
-			e.path[1].className += ' liactive';
+			e.target.className += ' liactive';
 		});
 })();
 
@@ -44,3 +44,19 @@ setInterval(() => {
 		else toTop.style.display = 'none';
 	};
 })();
+
+const allSection = $$('.main > section');
+const inView = (item) => {
+	let rect = item.getBoundingClientRect();
+	return rect.y <= 0 && rect.bottom >= 0;
+};
+
+mainContainer.addEventListener('scroll', () => {
+	allSection.forEach((item, index) => {
+		if (inView(item)) {
+			const last = $('.liactive');
+			last.className = last.className.replace(' liactive', '');
+			linkList[index].className += ' liactive';
+		}
+	});
+});
