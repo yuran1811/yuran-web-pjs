@@ -337,10 +337,7 @@ const otherData = [
 	},
 ];
 const otherSection = document.querySelector('.others');
-otherSection.innerHTML = `
-		<h2 class="heading-title">
-			<span> Others </span>
-		</h2>
+otherSection.innerHTML += `
 		<div class="content">
 			<div class="textBox">
 				${otherData.map((item) => item.content).join('')}
