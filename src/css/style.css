@@ -277,7 +277,7 @@ section {
 
 /*Title*/
 .title {
-	background: var(--heading-hover-text);
+	background-image: var(--heading-hover-text);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	background-clip: text;
