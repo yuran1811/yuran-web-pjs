@@ -298,22 +298,32 @@ const otherData = [
 					<ul>
 						<li>
 							<p class="p-indent1">
-								<i class="fas fa-check"></i> Search the problems that you want to do (search by name, tags, rating, contest ID)
+								<i class="fas fa-check"></i> Search user's info by handle
 							</p>
 						</li>
 						<li>
 							<p class="p-indent1">
-								<i class="fas fa-check"></i> Search user's info
+								<i class="fas fa-check"></i> Search user's rating by handle
 							</p>
 						</li>
 						<li>
 							<p class="p-indent1">
-								<i class="fas fa-check"></i> Search user's participated contests
+								<i class="fas fa-check"></i> Search user's status (problems solved) by handle
 							</p>
 						</li>
 						<li>
 							<p class="p-indent1">
-								<i class="fas fa-check"></i> Stalking others by showing the recent problemsets
+								<i class="fas fa-check"></i> Search problemset follow options
+							</p>
+						</li>
+						<li>
+							<p class="p-indent1">
+								<i class="fas fa-check"></i> Bookmark the problems
+							</p>
+						</li>
+						<li>
+							<p class="p-indent1">
+								<i class="fas fa-check"></i> See current or upcoming + finished contests
 							</p>
 						</li>
 					</ul>

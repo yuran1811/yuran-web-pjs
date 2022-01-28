@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 :root {
 	--background: rgb(235, 235, 235);
 	--color: black;
@@ -25,6 +27,7 @@
 }
 
 * {
+	user-select: none;
 	font-family: 'Patrick Hand', cursive;
 	-webkit-tap-highlight-color: transparent;
 }

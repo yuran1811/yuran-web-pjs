@@ -48,7 +48,7 @@ setInterval(() => {
 const allSection = $$('.main > section');
 const inView = (item) => {
 	let rect = item.getBoundingClientRect();
-	return rect.y <= 0 && rect.bottom >= 0;
+	return rect.y <= 50 && rect.bottom >= 180;
 };
 
 mainContainer.addEventListener('scroll', () => {
