@@ -345,6 +345,26 @@ const otherData = [
 			</div>
 			<br />`,
 	},
+	{
+		name: 'Countdown New Year',
+		content: `
+			<div class="other-item countdown-newyear">
+				<h3>Countdown New Year</h3>
+				<p class="p-indent1">
+					This repository is created to stored my VSCode settings
+				</p>
+				<p class="p-indent1">
+					Gradient Theme on
+					<a
+						class="highlight"
+						target="_blank"
+						rel="noopener"
+						href="https://github.com/yuran1811/VSCode-Config"
+					>Github</a>
+				</p>
+			</div>
+			<br />`,
+	},
 ];
 const otherSection = document.querySelector('.others');
 otherSection.innerHTML += `
@@ -353,6 +373,29 @@ otherSection.innerHTML += `
 				${otherData.map((item) => item.content).join('')}
 			</div>
 		</div>`;
+
+// Game Station Render
+const gameData = [
+	{
+		name: 'Tic Tac Toe',
+		href: 'GameStation/TicTacToe/index.html',
+	},
+	{
+		name: 'Shooting',
+		href: 'GameStation/Shooting/index.html',
+	},
+];
+const gameSection = document.querySelector('.game-station .content ul');
+gameSection.innerHTML = gameData.map(
+	(item) => `
+		<li>
+			<p class="p-indent1">
+				<a class="highlight" target="_blank" rel="noopener" href="${item.href}">
+					<i class="fas fa-check"></i> ${item.name}
+				</a>
+			</p>
+		</li>`
+);
 
 // Nav Bar Render
 const navBarData = [
