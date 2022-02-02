@@ -10,13 +10,14 @@
 				padding: 0;
 				user-select: none;
 				box-sizing: border-box;
+				font-family: 'Trebuchet MS', sans-serif;
 			}
 			html {
 				font-size: 62.5%;
 			}
 			body {
 				overflow: hidden;
-				/* cursor: none; */
+				cursor: none;
 			}
 			.score-container {
 				color: white;
@@ -24,10 +25,20 @@
 				font-size: 3rem;
 				padding: 2rem;
 			}
+			.cursor {
+				border-radius: 50%;
+				position: fixed;
+				height: 5rem;
+				z-index: 10;
+				width: 5rem;
+				background-image: url(./1.png);
+				background-size: cover;
+			}
 		</style>
 		<title>Shooting</title>
 	</head>
 	<body>
+		<div class="cursor"></div>
 		<div class="score-container">
 			<span class="score-title">Score: </span>
 			<span class="score-cnt">0</span>

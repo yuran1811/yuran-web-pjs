@@ -25,6 +25,7 @@ const PLAYER_OPTIONS_LTH = PLAYER_OPTIONS.length;
 const ENEMY_OPTIONS_LTH = ENEMY_OPTIONS.length;
 
 const scoreEle = document.querySelector('.score-cnt');
+const cursor = document.querySelector('.cursor');
 const canvas = document.querySelector('#app');
 const ctx = canvas.getContext('2d');
 
@@ -162,6 +163,10 @@ const gameControl = {};
 const particles = [];
 const enemies = [];
 
+const cursorRender = (x, y) => {
+	cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+};
+
 const keyHandle = () => {
 	if (!gameControl) return;
 
@@ -237,7 +242,6 @@ const animation = () => {
 	enemies.forEach((enemy, index) => {
 		enemy.update();
 		removeFromEdge(enemies, index, enemy.x, enemy.y);
-		console.log('enemies: ', enemies);
 
 		const dist = Math.hypot(player.x - enemy.x, player.y - enemy.y);
 
@@ -279,6 +283,10 @@ animation();
 spawnEnemies();
 
 // <--=== Event Handle
+window.onmousemove = (e) => {
+	const { clientX, clientY } = e;
+	cursorRender(clientX, clientY);
+};
 window.onclick = (e) => {
 	PlayerSelect.boostSpeedRun = 0;
 	const { clientX, clientY } = e;
