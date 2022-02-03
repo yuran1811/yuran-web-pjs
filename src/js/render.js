@@ -155,21 +155,21 @@ const otherData = [
 					</li>
 				</ul>
 				<p class="p-indent1">
-					Source Code on
+					Source code on
 					<a
 						class="highlight"
 						target="_blank"
 						rel="noopener"
 						href="https://github.com/yuran1811/detect-cheating-online-tests"
 						>Github</a>
-					and
+					and demo
 					<a
 						class="highlight"
 						target="iframe_detect-cheating"
 						href="https://yuran1811.github.io/detect-cheating-online-tests"
 						onclick="document.getElementById('iframe_detect-cheating').style.display = 'none';"
 						ondblclick="document.getElementById('iframe_detect-cheating').style.display = 'block';"
-						>Demo Here</a>
+						>here</a>
 					(double-click to view and single-click to hide)
 					<br />
 					(Please disable dark mode of this site if the "Demo" doesn't display well!)
@@ -272,18 +272,18 @@ const otherData = [
 					This Form Validator Library is used to validate the form
 				</p>
 				<p class="p-indent1">
-					Source Code on
+					Source code on
 					<a
 						class="highlight"
 						target="_blank"
 						rel="noopener"
 						href="https://github.com/yuran1811/Form-Validator-Library"
-					>Github</a> and Demo <a
+					>Github</a> and demo <a
 						class="highlight"
 						target="_blank"
 						rel="noopener"
 						href="https://yuran1811.github.io/Form-Validator-Library/"
-					>Here</a>
+					>here</a>
 				</p>
 			</div>
 			<br />`,
@@ -329,7 +329,7 @@ const otherData = [
 					</ul>
 				</p>
 				<p class="p-indent1">
-					Source Code on
+					Source code on
 					<a
 						class="highlight"
 						target="_blank"
@@ -351,16 +351,15 @@ const otherData = [
 			<div class="other-item countdown-newyear">
 				<h3>Countdown New Year</h3>
 				<p class="p-indent1">
-					This repository is created to stored my VSCode settings
+					For bringing memorable memories to people during Tet Holiday, I decided to create this site.
 				</p>
 				<p class="p-indent1">
-					Gradient Theme on
-					<a
-						class="highlight"
-						target="_blank"
-						rel="noopener"
-						href="https://github.com/yuran1811/VSCode-Config"
-					>Github</a>
+					Source code on
+					<a class="highlight" target="_blank" rel="noopener"
+						href="https://github.com/yuran1811/Countdown-NewYear">Github</a>
+					and demo
+					<a class="highlight" target="_blank" rel="noopener"
+						href="https://yuran1811.github.io/Countdown-NewYear/">here</a>
 				</p>
 			</div>
 			<br />`,
@@ -384,10 +383,15 @@ const gameData = [
 		name: 'Shooting',
 		href: 'GameStation/Shooting/index.html',
 	},
+	{
+		name: 'Go Hero',
+		href: 'GameStation/GoHero/index.html',
+	},
 ];
 const gameSection = document.querySelector('.game-station .content ul');
-gameSection.innerHTML = gameData.map(
-	(item) => `
+gameSection.innerHTML = gameData
+	.map(
+		(item) => `
 		<li>
 			<p class="p-indent1">
 				<a class="highlight" target="_blank" rel="noopener" href="${item.href}">
@@ -395,7 +399,8 @@ gameSection.innerHTML = gameData.map(
 				</a>
 			</p>
 		</li>`
-);
+	)
+	.join('');
 
 // Nav Bar Render
 const navBarData = [
