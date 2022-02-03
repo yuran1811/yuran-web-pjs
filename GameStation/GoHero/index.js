@@ -5,6 +5,7 @@ canvas.width = innerWidth;
 canvas.height = innerHeight;
 
 const gravity = 1.5;
+const PLATFORM_WIDTH = 200;
 
 // <--== Object
 class Player {
@@ -36,7 +37,7 @@ class Player {
 class Platform {
 	constructor({ x, y }) {
 		this.position = { x, y };
-		this.width = 200;
+		this.width = PLATFORM_WIDTH;
 		this.height = 20;
 	}
 
@@ -75,9 +76,10 @@ let platforms = [];
 let genericObjects = [];
 let keys = {};
 let scrollOffset = 0;
+let numUp = 0;
 
 const SPACE = 300;
-const NUM_BLOCK = 10;
+const NUM_BLOCK = 20;
 const MARGIN = 400;
 
 const init = () => {
@@ -94,17 +96,19 @@ const init = () => {
 
 	scrollOffset = 0;
 
-	const getRand = (gap) => {
-		const x = Math.random() * 200 + gap;
-		const y = Math.random() * innerHeight;
-		return { x, y };
+	const getRand = ({ x, y }) => {
+		const newX = Math.random() * PLATFORM_WIDTH + PLATFORM_WIDTH + x;
+		const newY = Math.random() * (innerHeight - y) + y / 2;
+		return { x: newX, y: newY };
 	};
 
-	let gap = SPACE;
+	let lastPlatform = { x: 200, y: 350 };
+	let lastGeneric = { x: 0, y: 0 };
 	for (let i = 0; i < NUM_BLOCK; i++) {
-		genericObjects.push(new GenericObject(getRand(gap)));
-		platforms.push(new Platform(getRand(gap)));
-		gap += SPACE;
+		lastGeneric = getRand(lastGeneric);
+		lastPlatform = getRand(lastPlatform);
+		genericObjects.push(new GenericObject(lastGeneric));
+		platforms.push(new Platform(lastPlatform));
 	}
 };
 
@@ -187,7 +191,8 @@ window.onkeydown = ({ key }) => {
 			keys[key].press = 1;
 			break;
 		case 'w':
-			player.velocity.y -= player.velocity.y >= 0 ? 25 : 0;
+			if (player.position.y - player.height >= 0)
+				if (numUp < 3 && ++numUp < 3) player.velocity.y -= 20;
 			break;
 		case 's':
 			break;
@@ -202,9 +207,11 @@ window.onkeyup = ({ key }) => {
 			keys[key].press = 0;
 			break;
 		case 'w':
+			if (-player.velocity.y <= innerWidth / 2) numUp = 0;
+			else numUp = 3;
 			break;
 		case 's':
-			player.velocity.y += 10;
+			player.velocity.y += 15;
 			break;
 		default:
 			break;
