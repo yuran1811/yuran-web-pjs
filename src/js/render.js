@@ -377,15 +377,15 @@ otherSection.innerHTML += `
 const gameData = [
 	{
 		name: 'Tic Tac Toe',
-		href: 'GameStation/TicTacToe/index.html',
+		href: 'https://yuran1811.github.io/Canvas-Collection/GameStation/TicTacToe/index.html',
 	},
 	{
 		name: 'Shooting',
-		href: 'GameStation/Shooting/index.html',
+		href: 'https://yuran1811.github.io/Canvas-Collection/GameStation/Shooting/index.html',
 	},
 	{
 		name: 'Go Hero',
-		href: 'GameStation/GoHero/index.html',
+		href: 'https://yuran1811.github.io/Canvas-Collection/GameStation/GoHero/index.html',
 	},
 ];
 const gameSection = document.querySelector('.game-station .content ul');

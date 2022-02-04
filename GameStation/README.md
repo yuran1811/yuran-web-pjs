@@ -1,7 +1,5 @@
 # Here are all my MiniGame Projects
 
-## Have fun with them!!!
+## This is the old version of [**Canvas Collection**](https://github.com/yuran1811/Canvas-Collection) repo
 
-### List
-
--   [x] [**Tic Tac Toe**](TicTacToe)
+## All updates will be unavailable
