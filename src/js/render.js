@@ -106,7 +106,45 @@ const htmls = `
 const main = document.querySelector('.main');
 main.innerHTML = htmls + main.innerHTML;
 
-// Other Section Render
+// <--== Canvas Collection Section Render
+const canvasData = [
+	{
+		name: 'Sine Waves',
+		href: 'https://github.com/yuran1811/Canvas-Collection/tree/main/Inspire/SineWaves',
+	},
+	{
+		name: 'Galaxy',
+		href: 'https://github.com/yuran1811/Canvas-Collection/tree/main/Inspire/Galaxy',
+	},
+	{
+		name: 'Fireworks',
+		href: 'https://github.com/yuran1811/Canvas-Collection/tree/main/Inspire/Fireworks',
+	},
+];
+const canvasSection = document.querySelector('.canvas-collection');
+canvasSection.innerHTML += `
+	<div class="content">
+		<div class="textBox">
+			<p>Checkout my Canvas Collection</p>
+			<ul class="wrap">
+				${canvasData
+					.map(
+						(item) => `
+							<li>
+								<p class="p-indent1">
+									<a class="highlight-hz" target="_blank" rel="noopener" href="${item.href}">
+										${item.name}
+									</a>
+								</p>
+							</li>`
+					)
+					.join('')}
+			</ul>
+		</div>
+	</div>`;
+// Other Section Render ==-->
+
+// <--== Other Section Render
 const otherData = [
 	{
 		name: 'Detect Cheating',
@@ -367,13 +405,14 @@ const otherData = [
 ];
 const otherSection = document.querySelector('.others');
 otherSection.innerHTML += `
-		<div class="content">
-			<div class="textBox">
-				${otherData.map((item) => item.content).join('')}
-			</div>
-		</div>`;
+	<div class="content">
+		<div class="textBox">
+			${otherData.map((item) => item.content).join('')}
+		</div>
+	</div>`;
+// Other Section Render ==-->
 
-// Game Station Render
+// <--== Game Station Render
 const gameData = [
 	{
 		name: 'Tic Tac Toe',
@@ -392,21 +431,26 @@ const gameSection = document.querySelector('.game-station .content ul');
 gameSection.innerHTML = gameData
 	.map(
 		(item) => `
-		<li>
-			<p class="p-indent1">
-				<a class="highlight" target="_blank" rel="noopener" href="${item.href}">
-					<i class="fas fa-check"></i> ${item.name}
-				</a>
-			</p>
-		</li>`
+			<li>
+				<p class="p-indent1">
+					<a class="highlight-hz" target="_blank" rel="noopener" href="${item.href}">
+						${item.name}
+					</a>
+				</p>
+			</li>`
 	)
 	.join('');
+// Game Station Render ==-->
 
-// Nav Bar Render
+// <--== Nav Bar Render
 const navBarData = [
 	{
 		href: '#banner',
 		name: 'Home',
+	},
+	{
+		href: '#canvas-collection',
+		name: 'Collection',
 	},
 	{
 		href: '#app-drawer',
@@ -433,8 +477,9 @@ const navBarList = document.querySelector('.navbar-container ul');
 navBarList.innerHTML = navBarData
 	.map(
 		(item, index) => `
-	<li class="lk ${index || 'liactive'}">
-		<a href="${item.href}" style="--i: 0.${index + 1}s">${item.name}</a>
-	</li>`
+			<li class="lk ${index || 'liactive'}">
+				<a href="${item.href}" style="--i: 0.${index + 1}s">${item.name}</a>
+			</li>`
 	)
 	.join('');
+// Nav Bar Render ==-->

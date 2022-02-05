@@ -62,6 +62,57 @@ body.dark {
 	--social-panel-p-color: #046585;
 }
 
+.highlight {
+	color: var(--social-panel-p-background);
+	text-decoration: none;
+	position: relative;
+	padding: 5px;
+	z-index: 0;
+}
+.highlight::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	z-index: -9;
+	height: 4px;
+	transition: all 0.3s ease;
+	background-color: var(--social-panel-p-color);
+}
+.highlight:hover {
+	font-weight: bold;
+}
+.highlight:hover::before {
+	height: 100%;
+}
+
+.highlight-hz {
+	color: var(--social-panel-p-background);
+	text-decoration: none;
+	position: relative;
+	padding: 5px;
+	z-index: 0;
+}
+.highlight-hz::before {
+	content: '';
+	position: absolute;
+	left: -7px;
+	bottom: 0;
+	top: 0;
+	width: 4px;
+	z-index: -9;
+	transition: all 0.3s ease;
+	background-color: var(--social-panel-p-color);
+}
+.highlight-hz:hover {
+	font-weight: bold;
+}
+.highlight-hz:hover::before {
+	width: calc(100% + 15px);
+}
+
 /* To Top Btn */
 .to-top {
 	user-select: none;
@@ -184,6 +235,16 @@ p {
 
 ul {
 	list-style: none;
+}
+ul.wrap {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+ul.wrap li {
+	width: 200px;
+	text-align: center;
 }
 
 .links {
@@ -400,44 +461,14 @@ section {
 	height: 5px;
 	background-color: var(--heading-title);
 
-	transform: scale(0);
+	transform: scaleX(0);
 	transition: all 0.5s ease;
 }
 .heading-title > span:hover::after {
-	transform: scale(1);
-}
-
-.game-station .content ul li + li {
-	margin-top: 0.7rem;
+	transform: scaleX(1);
 }
 
 /*Banner*/
-.highlight {
-	color: var(--social-panel-p-background);
-	text-decoration: none;
-	position: relative;
-	padding: 5px;
-	z-index: 0;
-}
-.highlight::before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-
-	z-index: -9;
-	height: 4px;
-	transition: all 0.3s ease;
-	background-color: var(--social-panel-p-color);
-}
-.highlight:hover {
-	font-weight: bold;
-}
-.highlight:hover::before {
-	height: 100%;
-}
-
 .banner {
 	user-select: none;
 	margin-top: 0;
@@ -603,6 +634,18 @@ iframe {
 @media (max-width: 640px) {
 	h1 {
 		font-size: 1.6rem;
+	}
+
+	ul.wrap {
+		display: flex;
+		flex-flow: column wrap;
+	}
+	ul.wrap li {
+		width: 100%;
+		text-align: left;
+	}
+	ul.wrap li + li {
+		margin: 7px 0;
 	}
 
 	.main.active {
