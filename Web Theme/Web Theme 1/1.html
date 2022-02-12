@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href="../../src/image/Avatar.jpg" />
+		<link rel="icon" href="src/image/Avatar.jpg" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -13,7 +13,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./1.css" />
-		<title>Web Theme 1</title>
+		<title>Web Projects</title>
 	</head>
 	<body>
 		<div class="to-top">
@@ -25,132 +25,18 @@
 		<div class="container">
 			<div class="navbar-container">
 				<div class="links">
-					<ul>
-						<li class="lk liactive">
-							<a href="#banner" style="--i: 0.1s">Home</a>
-						</li>
-						<li class="lk">
-							<a href="#app-drawer" style="--i: 0.2s">
-								App Drawer
-							</a>
-						</li>
-						<li class="lk">
-							<a href="#web-theme" style="--i: 0.3s">Web Theme</a>
-						</li>
-						<li class="lk">
-							<a href="#game-station" style="--i: 0.4s">
-								Game Station
-							</a>
-						</li>
-						<li class="lk">
-							<a href="#others" style="--i: 0.5s">Others</a>
-						</li>
-					</ul>
+					<ul></ul>
 				</div>
 			</div>
-			<div class="main">
-				<div class="top-bar">
-					<div class="menu"><div class="bar"></div></div>
-					<div class="title">
-						<h1><a href="#banner">Portfolio</a></h1>
-					</div>
-					<div class="theme-toggle">
-						<input
-							type="checkbox"
-							class="checkbox"
-							id="toggle-btn"
-						/>
-						<label class="label" for="toggle-btn">
-							<span class="moon"
-								><i class="fas fa-moon"></i
-							></span>
-							<span class="sun"><i class="fas fa-sun"></i></span>
-							<span class="ball"></span>
-						</label>
-					</div>
-				</div>
 
-				<section class="banner" id="banner">
-					<h2 style="display: none">Bio</h2>
-					<div class="content">
-						<div class="imgBox">
-							<div class="imgHover">
-								<p class="imgHoverText">
-									I'm a Front-end <br />
-									Web Developer
-									<br />
-									<i
-										class="bx bxs-yin-yang bx-spin bx-lg"
-									></i>
-								</p>
-							</div>
-							<img
-								alt="Yuran Legends Avatar"
-								src="../../src/image/Avatar.jpg"
-							/>
-						</div>
-						<div
-							style="
-								text-decoration: none;
-								font-size: 2rem;
-								text-transform: uppercase;
-								letter-spacing: 5.5px;
-								font-weight: bold;
-							"
-						>
-							Yuran Legends
-						</div>
-						<ul class="socialMedia">
-							<li>
-								<a
-									class="fb"
-									target="_blank"
-									rel="noopener"
-									href="https://www.facebook.com/YuranLegends/"
-									><i
-										class="fa-2x fab fa-facebook"
-										aria-hidden="true"
-									></i
-								></a>
-							</li>
-							<li>
-								<a
-									class="insta"
-									target="_blank"
-									rel="noopener"
-									href="https://instagram.com/_yuranlegends_"
-									><i
-										class="fa-2x fab fa-instagram"
-										aria-hidden="true"
-									></i
-								></a>
-							</li>
-							<li>
-								<a
-									class="yt"
-									target="_blank"
-									rel="noopener"
-									href="https://www.youtube.com/channel/UCLXNBb-jZRS_3o_itGGrGRA"
-									><i
-										class="fa-2x fab fa-youtube"
-										aria-hidden="true"
-									></i
-								></a>
-							</li>
-							<li>
-								<a
-									class="gh"
-									target="_blank"
-									rel="noopener"
-									href="https://github.com/yuran1811"
-									><i
-										class="fa-2x fab fa-github"
-										aria-hidden="true"
-									></i
-								></a>
-							</li>
-						</ul>
-					</div>
+			<div class="main">
+				<section
+					class="canvas-collection adjust"
+					id="canvas-collection"
+				>
+					<h2 class="heading-title">
+						<span> Canvas Collection </span>
+					</h2>
 				</section>
 
 				<section class="app-drawer adjust" id="app-drawer">
@@ -161,13 +47,8 @@
 						<div class="textBox">
 							<p>
 								With
-								<a
-									class="highlight"
-									target="_blank"
-									rel="noopener"
-									href="https://github.com/yuran1811/App-Drawer"
-									>App Drawer</a
-								>, you can do something fun with it like:
+								<span class="highlight">App Drawer</span>, you
+								can do something fun with it like:
 							</p>
 							<ul>
 								<li>
@@ -212,7 +93,7 @@
 								</li>
 							</ul>
 							<p>
-								Source Code on
+								Source code on
 								<a
 									class="highlight"
 									target="_blank"
@@ -220,14 +101,14 @@
 									href="https://github.com/yuran1811/App-Drawer"
 									>Github</a
 								>
-								and
+								and demo
 								<a
 									class="highlight"
 									target="iframe_app-drawer"
 									href="https://yuran1811.github.io/App-Drawer/"
 									onclick="document.getElementById('iframe_app-drawer').style.display = 'none';"
 									ondblclick="document.getElementById('iframe_app-drawer').style.display = 'block';"
-									>Demo Here</a
+									>here</a
 								>
 								(double-click to view and single-click to hide)
 								<br />
@@ -240,6 +121,53 @@
 								style="height: 620px; width: 100%"
 								title="App Drawer"
 							></iframe>
+						</div>
+					</div>
+				</section>
+
+				<section class="music-player adjust" id="music-player">
+					<h2 class="heading-title">
+						<span> Music Player </span>
+					</h2>
+					<div class="content">
+						<div class="textBox">
+							<p>
+								This
+								<span class="highlight">Music Player</span> uses
+								<a
+									class="highlight"
+									target="_blank"
+									rel="noopener"
+									href="https://github.com/napthedev/nhaccuatui-api-full"
+									>nhaccuatui-api-full</a
+								>
+								to get songs data from
+								<a
+									class="highlight"
+									target="_blank"
+									rel="noopener"
+									href="https://beta.nhaccuatui.com/"
+									>beta.nhaccuatui</a
+								>
+							</p>
+							<p>
+								Source code on
+								<a
+									class="highlight"
+									target="_blank"
+									rel="noopener"
+									href="https://github.com/yuran1811/Music-Player"
+									>Github</a
+								>
+								and demo
+								<a
+									class="highlight"
+									target="_blank"
+									rel="noopener"
+									href="https://yuran1811.github.io/Music-Player/"
+									>here</a
+								>
+							</p>
 						</div>
 					</div>
 				</section>
@@ -258,7 +186,7 @@
 											class="highlight"
 											target="_blank"
 											rel="noopener"
-											href="#"
+											href="Web%20Theme/Web%20Theme%201/1.html"
 											><i class="fas fa-check"></i> Theme
 											1</a
 										>
@@ -276,20 +204,7 @@
 					<div class="content">
 						<div class="textBox">
 							<p>Play fun games here!!!</p>
-							<ul>
-								<li>
-									<p class="p-indent1">
-										<a
-											class="highlight"
-											target="_blank"
-											rel="noopener"
-											href="../../GameStation/TicTacToe/index.html"
-											><i class="fas fa-check"></i> Tic
-											Tac Toe</a
-										>
-									</p>
-								</li>
-							</ul>
+							<ul class="wrap"></ul>
 						</div>
 					</div>
 				</section>
@@ -298,177 +213,10 @@
 					<h2 class="heading-title">
 						<span> Others </span>
 					</h2>
-					<div class="content">
-						<div class="textBox">
-							<!-- Detect Cheating -->
-							<h3>Detect Cheating</h3>
-							<p class="p-indent1">
-								<span class="highlight"> Detect Cheating</span>
-								is used to check if someone leaves the page when
-								any test is available
-							</p>
-							<p class="p-indent1">This site can:</p>
-							<ul>
-								<li>
-									<p class="p-indent2">
-										<i class="fas fa-check"></i> Display the
-										number of times you're away
-									</p>
-								</li>
-								<li>
-									<p class="p-indent2">
-										<i class="fas fa-check"></i> Display the
-										time you're away
-									</p>
-								</li>
-								<li>
-									<p class="p-indent2">
-										<i class="fas fa-check"></i> The site's
-										title will also change when you get away
-									</p>
-								</li>
-								<li>
-									<p class="p-indent2">
-										<i class="fas fa-check"></i> Toggle Dark
-										Mode when the title is clicked
-									</p>
-								</li>
-								<li>
-									<p class="p-indent2">
-										<i class="fas fa-check"></i> The history
-										will be stored in Local Storage unless
-										user click "Clear History" button
-									</p>
-								</li>
-							</ul>
-							<p class="p-indent1">
-								Source Code on
-								<a
-									class="highlight"
-									target="_blank"
-									rel="noopener"
-									href="https://github.com/yuran1811/detect-cheating-online-tests"
-									>Github</a
-								>
-								and
-								<a
-									class="highlight"
-									target="iframe_detect-cheating"
-									href="https://yuran1811.github.io/detect-cheating-online-tests"
-									onclick="document.getElementById('iframe_detect-cheating').style.display = 'none';"
-									ondblclick="document.getElementById('iframe_detect-cheating').style.display = 'block';"
-									>Demo Here</a
-								>
-								(double-click to view and single-click to hide)
-								<br />
-								(Please disable dark mode of this site if the
-								"Demo" doesn't display well!)
-							</p>
-							<iframe
-								id="iframe_detect-cheating"
-								name="iframe_detect-cheating"
-								style="height: 500px; width: 100%"
-								title="Detect Cheating"
-							></iframe>
-
-							<!-- Project: Dintiz -->
-							<br />
-							<h3>Project: Dinitz</h3>
-							<p class="p-indent1">
-								This repository is created to stored all the
-								sources of the project.
-							</p>
-							<p class="p-indent1">
-								Visit the site at
-								<a
-									class="highlight"
-									target="_blank"
-									rel="noopener"
-									href="https://sites.google.com/view/project-dinitz"
-									>Project: Dinitz</a
-								>
-								and the source on
-								<a
-									class="highlight"
-									target="_blank"
-									rel="noopener"
-									href="https://github.com/yuran1811/project-dinitz"
-									>Github</a
-								>
-							</p>
-						</div>
-					</div>
 				</section>
 			</div>
 		</div>
 
-		<button class="floating-btn">Contact me</button>
-		<div class="social-panel-container">
-			<div class="social-panel">
-				<p>
-					Created by
-					<a href="https://github.com/yuran1811">
-						<i style="letter-spacing: 1.5px">Yuran</i>
-					</a>
-				</p>
-				<button class="close-btn"></button>
-				<h4 style="letter-spacing: 1.5px">Visit me</h4>
-				<ul>
-					<li>
-						<a
-							target="_blank"
-							rel="noopener"
-							href="https://www.facebook.com/YuranLegends/"
-						>
-							<img
-								alt="facebook"
-								class="ic"
-								src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
-							/>
-						</a>
-					</li>
-					<li>
-						<a
-							target="_blank"
-							rel="noopener"
-							href="https://instagram.com/_yuranlegends_"
-						>
-							<img
-								alt="instagram"
-								class="ic"
-								src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-							/>
-						</a>
-					</li>
-					<li>
-						<a
-							target="_blank"
-							rel="noopener"
-							href="https://www.youtube.com/channel/UCLXNBb-jZRS_3o_itGGrGRA"
-						>
-							<img
-								alt="youtube"
-								class="ic"
-								src="https://cdn-icons-png.flaticon.com/512/187/187210.png"
-							/>
-						</a>
-					</li>
-					<li>
-						<a
-							target="_blank"
-							rel="noopener"
-							href="https://sites.google.com/view/yuranblog/home"
-						>
-							<img
-								alt="blog"
-								class="ic"
-								src="https://cdn-icons-png.flaticon.com/512/3959/3959542.png"
-							/>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
 		<script src="./1.js"></script>
 	</body>
 </html>
