@@ -1,6 +1,6 @@
-# Here are all my Web Theme
+# Here are all my Web Themes
 
-## Dicover to take inspiration
+## Dicover & take inspiration
 
 ### List
 

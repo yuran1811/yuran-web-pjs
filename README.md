@@ -1,3 +1,3 @@
-# My Web Projects are [**here**](https://yuran1811.github.io/Yuran-Web-Projects/)!!!
+# My Projects are [**here**](https://yuran1811.github.io/Yuran-Web-Projects/)!!!
 
-## This repo stored all of my Web projects
+## This repo list all my projects
