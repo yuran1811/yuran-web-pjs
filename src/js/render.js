@@ -109,39 +109,49 @@ main.innerHTML = htmls + main.innerHTML;
 // <--== Canvas Collection Section Render
 const canvasData = [
 	{
-		name: 'Sine Waves',
-		href: 'https://github.com/yuran1811/Canvas-Collection/tree/main/Inspire/SineWaves',
+		name: 'Particles Connect',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Particles/Particles2/index.html',
+	},
+	{
+		name: 'Yin Yang',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/YinYang/index.html',
+	},
+	{
+		name: 'Ripples',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Ripple/index.html',
 	},
 	{
 		name: 'Galaxy',
-		href: 'https://github.com/yuran1811/Canvas-Collection/tree/main/Inspire/Galaxy',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Galaxy/index.html',
 	},
 	{
-		name: 'Fireworks',
-		href: 'https://github.com/yuran1811/Canvas-Collection/tree/main/Inspire/Fireworks',
+		name: 'Fireworks (v1)',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Fireworks/Ver1/index.html',
+	},
+	{
+		name: 'Fireworks (v2)',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Fireworks/Ver2/index.html',
 	},
 ];
 const canvasSection = document.querySelector('.canvas-collection');
 canvasSection.innerHTML += `
-	<div class="content">
-		<div class="textBox">
-			<p>Checkout my Canvas Collection</p>
-			<ul class="wrap">
-				${canvasData
-					.map(
-						(item) => `
-							<li>
-								<p class="p-indent1">
-									<a class="highlight-hz" target="_blank" rel="noopener" href="${item.href}">
-										${item.name}
-									</a>
-								</p>
-							</li>`
-					)
-					.join('')}
-			</ul>
-		</div>
-	</div>`;
+<div class="content">
+	<div class="textBox">
+		<p>Checkout my Canvas Collection</p>
+		<ul class="wrap">
+			${canvasData
+				.map(
+					(item) => `
+			<li> <p class="p-indent1">
+				<a class="highlight-hz" target="_blank" rel="noopener" href="${item.href}">
+					${item.name}
+				</a>
+			</p> </li>`
+				)
+				.join('')}
+		</ul>
+	</div>
+</div>`;
 // Other Section Render ==-->
 
 // <--== Other Section Render

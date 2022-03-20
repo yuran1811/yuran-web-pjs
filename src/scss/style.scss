@@ -140,10 +140,10 @@ ul {
 	&.wrap {
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: center;
+		justify-content: space-around;
 		align-items: center;
 		li {
-			width: 200px;
+			min-width: 200px;
 			text-align: center;
 		}
 	}
