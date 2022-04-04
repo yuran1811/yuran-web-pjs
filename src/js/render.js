@@ -117,7 +117,11 @@ const canvasData = [
 		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/YinYang/index.html',
 	},
 	{
-		name: 'Ripples',
+		name: 'Patterns',
+		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Patterns/index.html',
+	},
+	{
+		name: 'Ripple',
 		href: 'https://yuran1811.github.io/Canvas-Collection/Inspire/Ripple/index.html',
 	},
 	{
